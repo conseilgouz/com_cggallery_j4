@@ -1,0 +1,122 @@
+<changelogs>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
+		<version>2.1.1</version>
+        <note>
+            <item>Update : 11/04/2022</item>
+        </note>
+        <fix>
+            <item>JText not found error</item>
+        </fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
+		<version>2.1.0</version>
+        <note>
+            <item>Update : 16/12/2021</item>
+        </note>
+        <fix>
+            <item>save not working</item>
+        </fix>
+        <addition>
+            <item>phoca collapse compatibility</item>
+        </addition>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
+		<version>2.0.7</version>
+        <note>
+            <item>Update : 16/12/2021</item>
+        </note>
+        <fix>
+            <item>replace boostrap tab by uitab</item>
+        </fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
+		<version>2.0.6</version>
+        <note>
+            <item>Update : 29/11/2021</item>
+        </note>
+        <fix>
+            <item>Unpublish/publish/trash pages</item>
+			<item>unistall : drop cggallery_page table</item>
+        </fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
+		<version>2.0.5</version>
+        <note>
+            <item>Update : 26/11/2021</item>
+        </note>
+        <fix>
+            <item>SEF URL</item>
+        </fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
+		<version>2.0.4</version>
+        <note>
+            <item>Update : 15/11/2021</item>
+        </note>
+        <fix>
+            <item>webasset : slider directory error</item>
+        </fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
+		<version>2.0.3</version>
+        <note>
+            <item>Update : 01/11/2021</item>
+        </note>
+        <addition>
+            <item>Jwebasset : wrong directory access</item>
+        </addition>
+        <fix>
+            <item>Joomla 4.0 : article not found</item>
+        </fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
+		<version>2.0.2</version>
+        <note>
+            <item>Update : 30/10/2021</item>
+        </note>
+        <addition>
+            <item>Joomla 4.0 : use webasset</item>
+        </addition>
+        <fix>
+            <item>Joomla 4.0 : article not found</item>
+        </fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
+		<version>2.0.1</version>
+        <note>
+            <item>Update : 11/07/2021</item>
+        </note>
+        <addition>
+            <item>Joomla 4.0 : media handling</item>
+        </addition>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
+		<version>2.0.0</version>
+        <note>
+            <item>Update : 10/07/2021</item>
+        </note>
+        <addition>
+            <item>Joomla 4.0 RC2 compatibility</item>
+        </addition>
+	</changelog>
+</changelogs>

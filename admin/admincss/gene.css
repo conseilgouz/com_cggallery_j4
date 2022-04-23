@@ -1,0 +1,39 @@
+.form-horizontal .controls {
+	margin-left: 10px;
+}
+#gene_tab .control-group:nth-of-type(2){ /* title */
+	float:left;width:40%;
+}
+#gene_tab .control-group:nth-of-type(3){ /* state */
+	float:left;width:30%;
+}
+#gene_tab .control-group:nth-of-type(4){ /* language */
+	float:right;width:30%;
+}
+#gene_tab .control-group:nth-of-type(5){ /* introtext */
+	clear:both;width:100%;
+}
+#gene_tab .control-group:nth-of-type(6) .controls, /* Intro */
+#gene_tab .control-group:nth-of-type(7) .controls{ /* edit */
+	width:80%;margin-left:9em;
+}
+#gene_tab .control-group:nth-of-type(8) .controls, /* bottom */
+#gene_tab .control-group:nth-of-type(9) .controls{ /* edit */
+	width:80%;margin-left:9em;
+}
+#gene_tab .control-group:nth-of-type(3) .control-label {width:5em}
+#gene_tab .control-group:nth-of-type(4) .control-label {width:5em}
+#gene_tab .control-group:nth-of-type(5) .control-label {width:5em}
+
+.alert-success {font-size:120%;
+text-align:center}
+
+.info-labels + div {
+background: none repeat scroll 0 0 #EEEEEE;
+color: #000000;
+font-size: 110%;
+font-style: italic;
+font-weight: normal;
+margin: 15px 0 30px;
+padding: 15px 10px 10px 20px;
+}

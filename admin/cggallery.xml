@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="4.0" method="upgrade">
+	<name>CG Gallery</name>
+	<creationDate>November 2021</creationDate>
+	<author>ConseilGouz</author>
+	<authorEmail>pascal.leconte@conseilgouz.com</authorEmail>
+	<authorUrl>www.conseilgouz.com</authorUrl>
+	<copyright>Copyright (C) 2022 ConseilGouz.com. All Rights Reserved</copyright>
+	<license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<version>2.1.1</version>
+	<namespace path="src">ConseilGouz\Component\CGGallery</namespace>
+
+	<description>CG_GAL_XML_DESCRIPTION</description>
+    <install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql
+			</file>
+		</sql>
+	</install>
+    <uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql
+			</file>
+		</sql>
+	</uninstall>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates</schemapath>
+		</schemas>
+	</update>
+    <files folder="site">
+		<folder>src</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+    </files>
+	<media destination="com_cggallery" folder="media">
+		<folder>js</folder>
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>unitegallery</folder>
+		<filename>index.html</filename>
+	</media>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB/com_cggallery.ini</language>
+		<language tag="en-GB">language/en-GB/com_cggallery.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/com_cggallery.ini</language>
+		<language tag="fr-FR">language/fr-FR/com_cggallery.sys.ini</language>
+	</languages>
+	<administration>
+		<menu>CG_GAL_MENU</menu>
+        <submenu>
+            <menu link="option=com_cggallery&amp;view=pages" view="pages">Pages</menu>
+            <menu link="option=com_cggallery&amp;view=import" view="import">Import</menu>
+        </submenu>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>index.html</filename>
+			<folder>admincss</folder>
+			<folder>forms</folder>
+			<folder>services</folder>
+			<folder>sql</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/com_cggallery.ini</language>
+			<language tag="en-GB">language/en-GB/com_cggallery.sys.ini</language>
+			<language tag="fr-FR">language/fr-FR/com_cggallery.ini</language>
+			<language tag="fr-FR">language/fr-FR/com_cggallery.sys.ini</language>
+		</languages>
+	</administration>
+	<changelogurl>https://www.conseilgouz.com/updates/com_cggallery_changelog.xml</changelogurl>
+	<updateservers>
+	<server type="extension" name="CG Gallery" priority="1">https://www.conseilgouz.com/updates/com_cggallery_update.xml</server>
+	</updateservers>
+
+</extension>
