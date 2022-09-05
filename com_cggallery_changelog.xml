@@ -1,10 +1,21 @@
 <changelogs>
 	<changelog>
 		<element>com_cggallery</element>
-		<type>Module</type>
+		<type>component</type>
+		<version>2.2.1</version>
+        <note>
+            <item>Update : 05/09/2022</item>
+        </note>
+		<fix>
+			<item>Version in language files</item>
+		</fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
 		<version>2.2.0</version>
         <note>
-            <item>Update : 21/12/2021</item>
+            <item>Update : 05/09/2022</item>
         </note>
 		<fix>
 			<item>MultiLang : fix image directory</item>
