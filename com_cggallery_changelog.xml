@@ -1,6 +1,23 @@
 <changelogs>
 	<changelog>
 		<element>com_cggallery</element>
+		<type>Module</type>
+		<version>2.2.0</version>
+        <note>
+            <item>Update : 21/12/2021</item>
+        </note>
+		<fix>
+			<item>MultiLang : fix image directory</item>
+		</fix>
+        <addition>
+            <item>Lightbox : hide left/right button if single image to display</item>
+        </addition>
+		<remove>
+			<item>Remove bootstrap call</item>
+		</remove>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
 		<type>component</type>
 		<version>2.1.1</version>
         <note>

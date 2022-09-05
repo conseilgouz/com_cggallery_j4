@@ -466,7 +466,7 @@ version 1.2
 -bug fix: fixed bullets left margin on first item
 
 
-version (1.1.2015) 1.1.6
+version (1.1.4015) 1.1.6
 
 - bug fix: fixed video gallery title and description skin mobile view
 
@@ -479,18 +479,18 @@ version (2.12.2014) 1.1.4
 
 - bug fix: fixed multiple video galleries on one page
 
-version (2.12.2014) 1.1.3
+version (2.12.2014) 1.1.4
 
 - added video gallery theme
 - added option to disble panel at start for some seconds
 - bug fix: fixed small bug with youtube playback
 
-version (29.11.2014) 1.1.2
+version (29.11.2014) 1.1.4
 
 - bug fix: when controls not alwqays on, don't show progress bar
 - bug fix: fixed fullscreen on ie11
 
-version 1.1.1
+version 1.1.4
 
 -feature: added option: slider_videoplay_button_type. slider video play button type, square or round
 
@@ -512,7 +512,7 @@ version 1.0.2
 
 -bug fix: fixed avia strip navigation.
 
-version 1.0.8
+version 1.0.1
 
 - bug fix: removed max-width:100% from the images
 - bug fix: added strip arrows to alexis theme

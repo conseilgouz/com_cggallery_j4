@@ -5,17 +5,21 @@
 .---------Slider_Arrows--------{}
 
 .ug-arrow-left.ug-skin-alexis,
-.ug-arrow-right.ug-skin-alexis{
+.ug-arrow-right.ug-skin-alexis,
+.ug-button-tile-navigation.ug-button-tile-left{
 	width:35px;
 	height:35px;
 	background-image:url('images/slider_arrow_left.png');
 	background-position:0px 0px;
 }
 
-.ug-arrow-right.ug-skin-alexis{
+.ug-arrow-right.ug-skin-alexis,
+.ug-button-tile-navigation.ug-button-tile-right{
 	background-image:url('images/slider_arrow_right.png');
 }
-
+.ug-button-tile-navigation.ug-button-tile-play.ug-pause-icon {
+	background-image:url('images/button_playpause.png');
+}
 .ug-arrow-left.ug-skin-alexis.ug-arrow-hover,
 .ug-arrow-right.ug-skin-alexis.ug-arrow-hover{
 	background-position:0px -35px;

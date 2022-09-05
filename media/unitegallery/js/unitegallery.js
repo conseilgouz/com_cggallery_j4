@@ -1,4 +1,4 @@
-// Unite Gallery, Version: 1.7.45, released 27 Feb 2017 / modif. pascal sans eval()
+// Unite Gallery, Version: 1.7.45, released 27 Feb 2017 / modif. pascal sans eval() / hide left/right button in lightbox if only one image to display
 /**
  * write something to debug line
  */
@@ -22129,10 +22129,15 @@ function UGLightbox(){
 		
 		
 		html += 	"<div class='ug-lightbox-button-close'></div>";
-		
-		html += "<div class='ug-lightbox-arrow-left'></div>";		
-		html += "<div class='ug-lightbox-arrow-right'></div>";
-		
+		var numItems = g_gallery.getNumItems();
+		// pascal : hide arrows if only one image to display
+		$hide = "hidden"
+		if (numItems > 1) {
+			$hide = ""
+		}
+		html += "<div class='ug-lightbox-arrow-left "+$hide+"'></div>";		
+		html += "<div class='ug-lightbox-arrow-right "+$hide+"'></div>";
+		// pascal : end
 		html += "</div>";
 		
 		g_objWrapper = jQuery(html);

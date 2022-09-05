@@ -18,12 +18,13 @@ use Joomla\CMS\Filesystem\Folder;
 use Joomla\CMS\Filesystem\File;
 
 $document = Factory::getDocument();
-HTMLHelper::_('bootstrap.framework');
+// HTMLHelper::_('bootstrap.framework');
 HTMLHelper::_('jquery.framework'); 
 $comfield	= 'media/com_cggallery/';
 $app = Factory::getApplication();
 $com_id = $app->input->getInt('Itemid');
-$baseurl 		= URI::base();
+
+$uri = Uri::getInstance();
 
 $this->cgg_params = CGHelper::getParams($this->page,$this->getModel());
 $ug_type	= $this->cgg_params->get('ug_type', '');
@@ -83,7 +84,7 @@ echo '<div id="cg_gallery_'.$com_id.'" data="'.$com_id.'" class="cg_gallery">';
 if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répertoire
 	$ug_full_dir = $this->cgg_params->get('ug_full_dir',''); // répertoire complet ou non
 	$files = array();
-	$ug_big_dir = CGHelper::getFolder($ug_big_dir); // gestion répertoire dynamique
+	$ug_big_dir = CGHelper::getFolder( $ug_big_dir); // gestion répertoire dynamique
 	if ($ug_big_dir === false) {
 		echo '</div>';  // on ferme la div ouverte
 		return false;
@@ -95,8 +96,8 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
 	$desc = CGHelper::getDesc($ug_big_dir); // récupération fichier description s'il existe
 	if (count($files) == 0) { ?>
 		<img alt=""
-		src ="<?php echo ''.URI::base(true).$comfield;?>unitegallery/images/pasdimage.png" 
-		data-image="<?php echo ''.URI::base(true).$comfield;?>unitegallery/images/pasdimage.png" 
+		src ="<?php echo ''.URI::base(true).'/'.$comfield;?>unitegallery/images/pasdimage.png" 
+		data-image="<?php echo ''.URI::base(true).'/'.$comfield;?>unitegallery/images/pasdimage.png" 
 						data-description=""
 						style="display:none">
 	<?php 
@@ -132,12 +133,12 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
 			src="<?php if (!File::exists($ug_thumb_dir.$file)) {// create thumbnail file if it does not exist
 						CGHelper::createThumbNail($ug_big_dir.'/'.$bigfile,$ug_thumb_dir.$file,$this->cgg_params->get('ug_compression'));
 					}
-					echo $ug_thumb_dir.$file;?>"
+					echo $uri->root().$ug_thumb_dir.$file;?>"
 			<?php if (File::exists($ug_big_dir.'/'.$bigfile)) {
 			?>
-				data-image="<?php echo ''.URI::base(true).'/'.$ug_big_dir; ?>/<?php echo $bigfile;?>"
+				data-image="<?php echo $uri->root().$ug_big_dir; ?>/<?php echo $bigfile;?>"
 			<?php } else {?>
-				data-image="<?php echo ''.URI::base(true).$comfield;?>unitegallery/images/pasdimage.png" <?php } ?>
+				data-image="<?php echo $uri->root().$comfield;?>unitegallery/images/pasdimage.png" <?php } ?>
 				data-description="<?php echo $description;?>"
 				style="display:none">
 		<?php
@@ -176,11 +177,11 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
 					if (!File::exists($ug_thumb_dir.'/'.$files[$i])) { // create thumbnail file if it does not exist
 						CGHelper::createThumbNail($ug_big_dir.'/'.$files[$i],$ug_thumb_dir.'/'.$files[$i],$this->cgg_params->get('ug_compression'));
 					}
-					echo $ug_thumb_dir.'/'.$files[$i];?>"
+					echo $uri->root().$ug_thumb_dir.'/'.$files[$i];?>"
 				<?php if (File::exists($ug_big_dir.'/'.$files[$i])) { ?>
-					data-image="<?php echo ''.URI::base(true).'/'.$ug_big_dir; ?>/<?php echo $bigfile;?>"
+					data-image="<?php echo $uri->root().$ug_big_dir; ?>/<?php echo $bigfile;?>"
 				<?php } else {?>
-					data-image="<?php echo ''.URI::base(true).$comfield;?>unitegallery/images/pasdimage.png" 
+					data-image="<?php echo $uri->root().$comfield;?>unitegallery/images/pasdimage.png" 
 				<?php } ?>
 				data-description="<?php echo $description;?>"
 				style="display:none">
@@ -224,10 +225,10 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
 					?>"
 					<?php if ($imgname)
 					{
-					?> data-image="<?php echo $baseurl.$imgname; ?>"
+					    ?> data-image="<?php echo $uri->root().$imgname; ?>"
 					<?php }
 					else { ?> 
-					data-image="<?php echo ''.URI::base(true).$comfield;?>unitegallery/images/pasdimage.png" 
+					data-image="<?php echo $uri->root().$comfield;?>unitegallery/images/pasdimage.png" 
 					<?php } ?>
 				data-description="<?php echo $imgdesc;?>"
 				style="display:none">
