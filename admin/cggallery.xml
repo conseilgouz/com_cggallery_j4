@@ -7,7 +7,7 @@
 	<authorUrl>www.conseilgouz.com</authorUrl>
 	<copyright>Copyright (C) 2022 ConseilGouz.com. All Rights Reserved</copyright>
 	<license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
-	<version>2.3.1</version>
+	<version>2.3.2</version>
 	<namespace path="src">ConseilGouz\Component\CGGallery</namespace>
 	<description>CG_GAL_XML_DESCRIPTION</description>
     <install>
@@ -27,6 +27,7 @@
 			<schemapath type="mysql">sql/updates</schemapath>
 		</schemas>
 	</update>
+	<scriptfile>script.php</scriptfile>
     <files folder="site">
 		<folder>src</folder>
 		<folder>tmpl</folder>
@@ -69,9 +70,9 @@
 			<language tag="fr-FR">language/fr-FR/com_cggallery.sys.ini</language>
 		</languages>
 	</administration>
-	<changelogurl>https://www.conseilgouz.com/updates/com_cggallery_changelog.xml</changelogurl>
+	<changelogurl>https://raw.githubusercontent.com/conseilgouz/com_cggallery_j4/master/com_cggallery_changelog.xml</changelogurl>
 	<updateservers>
-	<server type="extension" name="CG Gallery" priority="1">https://www.conseilgouz.com/updates/com_cggallery_update.xml</server>
+	<server type="extension" name="CG Gallery" priority="1">https://raw.githubusercontent.com/conseilgouz/updates_github/master/com_cggallery_update.xml</server>
 	</updateservers>
 
 </extension>

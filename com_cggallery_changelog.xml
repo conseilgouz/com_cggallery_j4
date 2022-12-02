@@ -2,6 +2,17 @@
 	<changelog>
 		<element>com_cggallery</element>
 		<type>component</type>
+		<version>2.3.2</version>
+        <note>
+            <item>Update : 02/12/2022</item>
+        </note>
+		<addition>
+			<item>Add cleanup script</item>
+		</addition>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
 		<version>2.3.1</version>
         <note>
             <item>Update : 02/12/2022</item>
