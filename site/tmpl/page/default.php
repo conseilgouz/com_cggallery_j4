@@ -250,7 +250,7 @@ $document->addScriptOptions('cg_gallery_'.$com_id,
 		  'ug_tile_width' => $ug_tile_width,
 		  'ug_carousel_autoplay_timeout' => $ug_carousel_autoplay_timeout,
 		  'ug_carousel_scroll_duration' => $ug_carousel_scroll_duration,
-		  'ug_link'=> $ug_link,,'ug_zoom'=>$ug_zoom,
+		  'ug_link'=> $ug_link,'ug_zoom'=>$ug_zoom,
 		  'ug_lightbox'=>$ug_lightbox,
 		  'ug_grid_thumbs_pos'=>$ug_grid_thumbs_pos, 'ug_grid_show_icons'=>$ug_grid_show_icons
 ));

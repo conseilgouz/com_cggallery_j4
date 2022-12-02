@@ -59,7 +59,7 @@ class PageModel extends AdminModel {
         $data->ug_text_lgth = $compl['ug_text_lgth'];
         $data->ug_link = $compl['ug_link'];
         $data->ug_lightbox = $compl['ug_lightbox'];
-		$data->ug_zoom = $compl['ug_zoom'};
+		$data->ug_zoom = $compl['ug_zoom'];
         $data->ug_dir_or_image = $compl['ug_dir_or_image'];
         $data->ug_autothumb = $compl['ug_autothumb'];
         $data->ug_big_dir = $compl['ug_big_dir'];

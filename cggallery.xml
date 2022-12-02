@@ -69,9 +69,9 @@
 			<language tag="fr-FR">language/fr-FR/com_cggallery.sys.ini</language>
 		</languages>
 	</administration>
-	<changelogurl>https://www.conseilgouz.com/updates/com_cggallery_changelog.xml</changelogurl>
+	<changelogurl>https://raw.githubusercontent.com/conseilgouz/com_cggallery_j4/master/com_cggallery_changelog.xml</changelogurl>
 	<updateservers>
-	<server type="extension" name="CG Gallery" priority="1">https://www.conseilgouz.com/updates/com_cggallery_update.xml</server>
+	<server type="extension" name="CG Gallery" priority="1">https://raw.githubusercontent.com/conseilgouz/updates_github/master/com_cggallery_update.xml</server>
 	</updateservers>
 
 </extension>

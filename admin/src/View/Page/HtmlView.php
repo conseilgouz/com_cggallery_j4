@@ -66,6 +66,7 @@ class HtmlView extends BaseHtmlView {
 		else {
 			ToolBarHelper::cancel('page.cancel', 'JTOOLBAR_CLOSE');
 		}
+		ToolbarHelper::inlinehelp();			
     }
 
 }

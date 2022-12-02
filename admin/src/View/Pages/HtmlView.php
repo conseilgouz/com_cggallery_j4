@@ -78,6 +78,7 @@ class HtmlView extends BaseHtmlView
 
 		if ($canDo->get('core.admin')) {
 			ToolBarHelper::divider();
+			ToolbarHelper::inlinehelp();			
 			ToolBarHelper::preferences('com_cggallery');			
 		}
 	}
