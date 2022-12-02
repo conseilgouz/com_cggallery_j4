@@ -1,7 +1,7 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 1.0.5
+ * Version			: 2.3.0
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
@@ -85,6 +85,7 @@ class PageTable extends Table implements VersionableTableInterface
 			$page_params['ug_text_lgth'] = $compl['ug_text_lgth'];
 			$page_params['ug_link'] = $compl['ug_link'];
 			$page_params['ug_lightbox'] = $compl['ug_lightbox'];
+			$page_params['ug_zoom'] = $compl['ug_zoom'];
 			$page_params['ug_dir_or_image'] = $compl['ug_dir_or_image'];
 			$page_params['ug_autothumb'] = $compl['ug_autothumb'];
 			$page_params['ug_big_dir'] = $compl['ug_big_dir'];

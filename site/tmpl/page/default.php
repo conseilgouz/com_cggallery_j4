@@ -1,7 +1,7 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.1.1
+ * Version			: 2.3.0
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
@@ -41,6 +41,7 @@ $ug_carousel_autoplay_timeout = $this->cgg_params->get('ug_carousel_autoplay_tim
 $ug_carousel_scroll_duration = $this->cgg_params->get('ug_carousel_scroll_duration');
 $ug_link = $this->cgg_params->get('ug_link');
 $ug_lightbox = $this->cgg_params->get('ug_lightbox');
+$ug_zoom = $this->cgg_params->get('ug_zoom','true');
 $ug_grid_thumbs_pos = $this->cgg_params->get('ug_grid_thumbs_pos');
 $ug_grid_show_icons = $this->cgg_params->get('ug_grid_show_icons');
 
@@ -249,7 +250,7 @@ $document->addScriptOptions('cg_gallery_'.$com_id,
 		  'ug_tile_width' => $ug_tile_width,
 		  'ug_carousel_autoplay_timeout' => $ug_carousel_autoplay_timeout,
 		  'ug_carousel_scroll_duration' => $ug_carousel_scroll_duration,
-		  'ug_link'=> $ug_link,
+		  'ug_link'=> $ug_link,,'ug_zoom'=>$ug_zoom,
 		  'ug_lightbox'=>$ug_lightbox,
 		  'ug_grid_thumbs_pos'=>$ug_grid_thumbs_pos, 'ug_grid_show_icons'=>$ug_grid_show_icons
 ));

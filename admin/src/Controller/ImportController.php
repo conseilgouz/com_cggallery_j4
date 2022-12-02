@@ -1,7 +1,7 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.1.1
+ * Version			: 2.3.0
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
@@ -66,6 +66,7 @@ class ImportController extends FormController
             $page_params['ug_text_lgth'] = $mod_params->ug_text_lgth;
             $page_params['ug_link'] = $mod_params->ug_link;
             $page_params['ug_lightbox'] = $mod_params->ug_lightbox;
+            $page_params['ug_zoom'] = $mod_params->ug_zoom;
             $page_params['ug_dir_or_image'] = $mod_params->ug_dir_or_image;
             $page_params['ug_autothumb'] = $mod_params->ug_autothumb;
             $page_params['ug_big_dir'] = $mod_params->ug_big_dir;

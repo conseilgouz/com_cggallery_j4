@@ -1,7 +1,7 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 1.0.5
+ * Version			: 2.3.0
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
@@ -59,6 +59,7 @@ class PageModel extends AdminModel {
         $data->ug_text_lgth = $compl['ug_text_lgth'];
         $data->ug_link = $compl['ug_link'];
         $data->ug_lightbox = $compl['ug_lightbox'];
+		$data->ug_zoom = $compl['ug_zoom'};
         $data->ug_dir_or_image = $compl['ug_dir_or_image'];
         $data->ug_autothumb = $compl['ug_autothumb'];
         $data->ug_big_dir = $compl['ug_big_dir'];
