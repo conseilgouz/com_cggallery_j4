@@ -1,7 +1,7 @@
 <?php
 /**
 * CG Gallery Component  - Joomla 4.0.0 Component 
-* Version			: 2.3.2
+* Version			: 2.3.3
 * Package			: CG Gallery
 * copyright 		: Copyright (C) 2022 ConseilGouz. All rights reserved.
 * license    		: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
@@ -73,12 +73,12 @@ class com_cggalleryInstallerScript
 			$this->postinstall_cleanup();
 		}
         switch ($type) {
-            case 'install': $message = Text::_('ISO_POSTFLIGHT_INSTALLED'); break;
-            case 'uninstall': $message = Text::_('ISO_POSTFLIGHT_UNINSTALLED'); break;
-            case 'update': $message = Text::_('ISO_POSTFLIGHT_UPDATED'); break;
-            case 'discover_install': $message = Text::_('ISO_POSTFLIGHT_DISC_INSTALLED'); break;
+            case 'install': $message = Text::_('CG_GAL_POSTFLIGHT_INSTALLED'); break;
+            case 'uninstall': $message = Text::_('CG_GAL_POSTFLIGHT_UNINSTALLED'); break;
+            case 'update': $message = Text::_('CG_GAL_POSTFLIGHT_UPDATED'); break;
+            case 'discover_install': $message = Text::_('CG_GAL_POSTFLIGHT_DISC_INSTALLED'); break;
         }
-        $message = '<h3>'.Text::sprintf('ISO_POSTFLIGHT',$parent->getManifest()->name,$parent->getManifest()->version,$message).'</h3>';
+        $message = '<h3>'.Text::sprintf('CG_GAL_POSTFLIGHT',$parent->getManifest()->name,$parent->getManifest()->version,$message).'</h3>';
 
 		Factory::getApplication()->enqueueMessage($message.Text::_('COM_CGGALLERY'), 'notice');
 
@@ -93,7 +93,7 @@ class com_cggalleryInstallerScript
 	private function postinstall_cleanup() {
 		
 		$obsoleteFiles = [
-			JPATH_ADMINISTRATOR."/components/com_cgisotope/updates.txt"
+			JPATH_ADMINISTRATOR."/components/com_cggallery/updates.txt"
 		];
 		foreach ($obsoleteFiles as $file) {
 			if (@is_file($file)) {
