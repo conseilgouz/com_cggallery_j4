@@ -1,9 +1,9 @@
 <?php
 /**
-* CG Gallery Component  - Joomla 4.0.0 Component 
-* Version			: 2.3.3
+* CG Gallery Component  - Joomla 4.x/5.x Component 
+* Version			: 2.4.0
 * Package			: CG Gallery
-* copyright 		: Copyright (C) 2022 ConseilGouz. All rights reserved.
+* copyright 		: Copyright (C) 2023 ConseilGouz. All rights reserved.
 * license    		: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
 */
 // No direct access to this file
@@ -11,6 +11,7 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Filesystem\File;
+use Joomla\CMS\Filesystem\Folder;
 
 class com_cggalleryInstallerScript
 {
@@ -150,7 +151,7 @@ class com_cggalleryInstallerScript
 	
 	private function uninstallInstaller()
 	{
-		if ( ! JFolder::exists(JPATH_PLUGINS . '/system/' . $this->installerName)) {
+		if ( ! Folder::exists(JPATH_PLUGINS . '/system/' . $this->installerName)) {
 			return;
 		}
 		$this->delete([

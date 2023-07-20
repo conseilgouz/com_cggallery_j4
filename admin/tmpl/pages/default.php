@@ -1,9 +1,9 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.1.1
+ * Version			: 2.4.0
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 // no direct access
@@ -14,6 +14,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Helper\ContentHelper;
+use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
 // JHtml::_('behavior.tooltip');
 HtmlHelper::_('behavior.multiselect');
@@ -25,7 +26,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 $canOrder	= ContentHelper::getActions('com_cggallery');
 $saveOrder	= $listOrder=='ordering';
 ?>
-<form action="<?php echo JRoute::_('index.php?option=com_cggallery&view=pages'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo Route::_('index.php?option=com_cggallery&view=pages'); ?>" method="post" name="adminForm" id="adminForm">
 	<?php if (!empty( $this->sidebar)) : ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
@@ -108,7 +109,7 @@ $saveOrder	= $listOrder=='ordering';
 					</a>
 				</td>
 				<td class="center">
-					<a href="<?php echo JRoute::_('index.php?option=com_cggallery&task=page.edit&id='.(int) $page->id); ?>">
+					<a href="<?php echo Route::_('index.php?option=com_cggallery&task=page.edit&id='.(int) $page->id); ?>">
                     <?php echo $this->escape($page->title); ?>                     
 					</a>
 				</td>
@@ -123,7 +124,7 @@ $saveOrder	= $listOrder=='ordering';
 						echo $text; ?>                     
 				</td>
                 <td align="center">
-                    <?php echo JLayoutHelper::render('joomla.content.language', $page); ?>
+                    <?php echo LayoutHelper::render('joomla.content.language', $page); ?>
                 </td>
 				<td class="center">
 					<?php echo HtmlHelper::_('jgrid.published', $page->state, $i, 'pages.', $canChange, 'cb'); ?>

@@ -2,6 +2,20 @@
 	<changelog>
 		<element>com_cggallery</element>
 		<type>component</type>
+		<version>2.4.0</version>
+        <note>
+            <item>Update : 20/07/2023</item>
+        </note>
+		<fix>
+			<item>Joomla 5.x compatibilty</item>
+		</fix>
+		<addition>
+			<item>Dynamic version number display</item>
+		</addition>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
 		<version>2.3.3</version>
         <note>
             <item>Update : 02/12/2022</item>

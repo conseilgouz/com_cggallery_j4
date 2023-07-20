@@ -1,23 +1,25 @@
 <?php
 /**
- * @component     CG Gallery
- * Version			: 2.1.1
+ * @component     CG Gallery for Joomla 4.x/5.x
+ * Version			: 2.4.0
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 // no direct access
 defined('_JEXEC') or die;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Helper\ContentHelper;
+use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\Registry\Registry;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
+use Joomla\CMS\Factory;
 
 // JHtml::_('behavior.tooltip');
 HTMLHelper::_('behavior.multiselect');
 
-$user		= JFactory::getUser();
+$user		= Factory::getUser();
 $userId		= $user->get('id');
 
 $canOrder = ContentHelper::getActions('com_cggallery');
@@ -60,13 +62,13 @@ $canOrder = ContentHelper::getActions('com_cggallery');
 		<thead>
 			<tr>
 				<th width="1%">
-					<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
+					<input type="checkbox" name="checkall-toggle" value="" title="<?php echo Text::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
 				</th>
 				<th class="center">
 					<?php echo Text::_('CG_GAL_TITLE'); ?>
 				</th>
                                  <th width="15%">
-                                    <?php echo JText::_( 'CG_GAL_LANGUAGE'); ?>
+                                    <?php echo Text::_( 'CG_GAL_LANGUAGE'); ?>
                                 </th>
 				<th width="5%">
 					<?php echo Text::_('JSTATUS'); ?>
@@ -90,7 +92,7 @@ $canOrder = ContentHelper::getActions('com_cggallery');
                         $lang->language = $module['language'];
                         $lang->language_image = str_replace('-','_',strtolower($module['language']));
 						$lang->language_title = $module['language'];
-                        echo JLayoutHelper::render('joomla.content.language', $lang); ?>
+                        echo LayoutHelper::render('joomla.content.language', $lang); ?>
                 </td>
 				<td>
 				      <?php echo HTMLHelper::_('jgrid.published', $module['published'], $i, 'import.', false, 'cb'); ?>                  

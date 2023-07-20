@@ -1,7 +1,7 @@
 <?php
 /**
- * @component     CG Gallery
- * Version			: 2.3.0
+ * @component     CG Gallery for Joomla 4.x/5.x
+ * Version			: 2.4.0
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
@@ -27,7 +27,7 @@ class ImportController extends FormController
     public function add($key = null, $urlVar = null) 
     {
         // Check for request forgeries.
-        Session::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
+        Session::checkToken() or jexit(Text::_('JINVALID_TOKEN'));
         $app = Factory::getApplication();
         $input = $app->input;
 		$pks = $input->post->get('cid', array(), 'array');
@@ -41,10 +41,10 @@ class ImportController extends FormController
             )->loadAssocList();
             if (count($result) != 1) {
                 $this->setMessage(Text::sprintf('CG_GAL_MODULE_SELECT_ERROR', $id), 'warning');
-                $this->setRedirect(JRoute::_('index.php?option=com_cggallery&view=import', false));
+                $this->setRedirect(Route::_('index.php?option=com_cggallery&view=import', false));
                 return false;
             }
-            $data = new StdClass();
+            $data = new \StdClass();
             $data->id= 0;
             $data->title = $this->check_title($result[0]['title']);
             $data->state = $result[0]['published'];
@@ -79,7 +79,7 @@ class ImportController extends FormController
             $slideslist = json_decode(str_replace("||", "\"", $mod_params->slideslist));
             $laliste = [];
             foreach ($slideslist as $item) {
-				$obj = new StdClass();
+				$obj = new \StdClass();
 				$obj->file_desc = str_replace("||", "\"", $item->imgcaption);
 				$obj->file_name = str_replace("||", "\"", $item->imgname);
 				$obj->file_id = str_replace("||", "\"", $item->slidearticleid);
@@ -89,12 +89,12 @@ class ImportController extends FormController
             $ret = $db->insertObject('#__cggallery_page', $data,'id');
             if (!$ret) {
                 $this->setMessage(Text::sprintf('JLIB_APPLICATION_ERROR_SAVE_FAILED', $ret), 'warning');
-                $this->setRedirect(JRoute::_('index.php?option=com_cggallery&view=import', false));
+                $this->setRedirect(Route::_('index.php?option=com_cggallery&view=import', false));
                 return false;
 			}
         }
         $this->setMessage(Text::sprintf('CG_GAL_MODULE_IMPORTED', count($pks)), 'notice');
-        $this->setRedirect(JRoute::_('index.php?option=com_cggallery&view=import', false));
+        $this->setRedirect(Route::_('index.php?option=com_cggallery&view=import', false));
         return false;
         }
 	function check_title($title) {
@@ -102,7 +102,7 @@ class ImportController extends FormController
         do {
 			$result = $db->setQuery(
                 $db->getQuery(true)
-                ->select(count('*'))
+                ->select("count('*')")
                 ->from($db->quoteName('#__cggallery_page'))
                 ->where($db->quoteName('title') . ' like ' . $db->quote($title) .' AND state in (0,1)')
             )->loadResult();
