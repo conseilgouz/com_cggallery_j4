@@ -1,9 +1,9 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.1.1
+ * Version			: 2.4.1
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGGallery\Site\Helper;
@@ -20,10 +20,10 @@ use Joomla\CMS\Router\Route;
 use  Joomla\CMS\Filter\OutputFilter as FilterOutput;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\String\StringHelper;
-use Joomla\CMS\Filesystem\Folder;
-use Joomla\CMS\Filesystem\File;
+use Joomla\Filesystem\Folder;
+use Joomla\Filesystem\File;
 use Joomla\CMS\Language\Text;
-
+use Joomla\CMS\Uri\Uri;
 class CGHelper {
     public static function getParams($id,$model)
     {
@@ -60,7 +60,7 @@ class CGHelper {
 		if (strpos($root,'$') !== false) { // répertoire incorrect: il reste des zones 
 			return false;
 		}
-		if(!Folder::exists($root) ) { // le répertoire n'existe pas : on crée
+		if(!is_dir($root) ) { // le répertoire n'existe pas : on crée
 			Folder::create($root,755);
 		}
 		return $root; 
@@ -221,7 +221,7 @@ private static function getLabelsFilePath($imagedirectory, $labelsfilename) {
 		return false;
 	}	
 	public static function thumbnailFromDir($dir,$compression) {
-		$files = JFolder::files($dir,null,null ,null ,null , array('desc.txt','index.html','.htaccess'));
+		$files = Folder::files($dir,null,null ,null ,null , array('desc.txt','index.html','.htaccess'));
 		$_dir = $dir;
 		$nb = 0;
 		if (count($files) > 0) {
@@ -231,7 +231,7 @@ private static function getLabelsFilePath($imagedirectory, $labelsfilename) {
 				$len = strlen($imgthumb);
 				$imgthumb = $_dir.'/th/'.substr($imgthumb,$pos,$len);
 				if (!File::exists($imgthumb)) { // fichier existe déjà  : on sort
-					if (self::createThumbNail(JURI::root().$_dir.'/'.$file,$imgthumb,$compression)) {
+					if (self::createThumbNail(URI::root().$_dir.'/'.$file,$imgthumb,$compression)) {
 					   $nb = $nb+1;
 					} else {
 					    Factory::getApplication()->enqueueMessage(Text::_($this->errorMsg), 'notice');
