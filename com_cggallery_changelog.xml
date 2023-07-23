@@ -2,6 +2,17 @@
 	<changelog>
 		<element>com_cggallery</element>
 		<type>component</type>
+		<version>2.4.2</version>
+        <note>
+            <item>Update : 23/07/2023</item>
+        </note>
+		<fix>
+			<item>use Joomla\Filesystem instead of Joomla\CMS\Filesystem classes in script.php</item>
+		</fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
 		<version>2.4.1</version>
         <note>
             <item>Update : 23/07/2023</item>
