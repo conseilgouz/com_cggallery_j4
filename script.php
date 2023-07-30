@@ -1,7 +1,7 @@
 <?php
 /**
 * CG Gallery Component  - Joomla 4.x/5.x Component 
-* Version			: 2.4.2
+* Version			: 2.4.3
 * Package			: CG Gallery
 * copyright 		: Copyright (C) 2023 ConseilGouz. All rights reserved.
 * license    		: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL

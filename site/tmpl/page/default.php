@@ -1,9 +1,9 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.3.0
+ * Version			: 2.4.3
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
  
@@ -70,7 +70,7 @@ if ($ug_type == "slider") {
 		$wa->registerAndUseScript('slider', $comfield.'unitegallery/themes/slider/ug-theme-slider.js');
 }
 
-if (strlen(trim($this->cgg_params->get('intro'))) > 0) {
+if ($this->cgg_params->get('intro') && (strlen(trim($this->cgg_params->get('intro'))) > 0)) {
 	// apply content plugins on weblinks
 	$item_cls = new stdClass;
 	$item_cls->text = $this->cgg_params->get('intro');
@@ -257,7 +257,7 @@ $document->addScriptOptions('cg_gallery_'.$com_id,
 
 $wa->registerAndUseScript('init', $comfield.'js/init.js');
 
-if (strlen(trim($this->cgg_params->get('bottom'))) > 0) {
+if ($this->cgg_params->get('bottom') && (strlen(trim($this->cgg_params->get('bottom'))) > 0)) {
 	// apply content plugins on weblinks
 	$item_cls = new stdClass;
 	$item_cls->text = $this->cgg_params->get('bottom');

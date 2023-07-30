@@ -1,7 +1,7 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.4.1
+ * Version			: 2.4.3
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
@@ -31,7 +31,7 @@ class CGHelper {
 		$table->load((int)$id);
 		$lesparams = json_decode($table->page_params,true);
 		$params = new Registry(json_encode($lesparams));
-        $params->slides = $table->slides;
+        $params->set('slides',$table->slides); 
 		return $params;
     }
 	public static function getFolder($dir)

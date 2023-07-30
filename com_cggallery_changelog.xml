@@ -2,6 +2,17 @@
 	<changelog>
 		<element>com_cggallery</element>
 		<type>component</type>
+		<version>2.4.3</version>
+        <note>
+            <item>Update : 30/07/2023</item>
+        </note>
+		<fix>
+			<item>PHP 8.2 : suppress notices</item>
+		</fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
 		<version>2.4.2</version>
         <note>
             <item>Update : 23/07/2023</item>
