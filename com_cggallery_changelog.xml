@@ -2,6 +2,19 @@
 	<changelog>
 		<element>com_cggallery</element>
 		<type>component</type>
+		<version>2.4.4</version>
+        <note>
+            <item>Update : 05/09/2023</item>
+        </note>
+		<fix>
+			<item>Add Path::clean($root,'/') in getFolder function</item>
+			<item>Select images directory in a list instead of a text field to prevent errors</item>
+			<item>init.js : options conflict with other CG Extensions</item>
+		</fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
 		<version>2.4.3</version>
         <note>
             <item>Update : 30/07/2023</item>

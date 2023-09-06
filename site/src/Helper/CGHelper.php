@@ -1,7 +1,7 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.4.3
+ * Version			: 2.4.4
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
@@ -24,6 +24,7 @@ use Joomla\Filesystem\Folder;
 use Joomla\Filesystem\File;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
+use Joomla\Filesystem\Path;
 class CGHelper {
     public static function getParams($id,$model)
     {
@@ -60,6 +61,7 @@ class CGHelper {
 		if (strpos($root,'$') !== false) { // répertoire incorrect: il reste des zones 
 			return false;
 		}
+		$root = Path::clean($root,'/');
 		if(!is_dir($root) ) { // le répertoire n'existe pas : on crée
 			Folder::create($root,755);
 		}
