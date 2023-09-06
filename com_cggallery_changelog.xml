@@ -2,6 +2,17 @@
 	<changelog>
 		<element>com_cggallery</element>
 		<type>component</type>
+		<version>2.4.5</version>
+        <note>
+            <item>Update : 05/09/2023</item>
+        </note>
+		<fix>
+			<item>reverse init.js fix from 2.4.4</item>
+		</fix>
+	</changelog>
+	<changelog>
+		<element>com_cggallery</element>
+		<type>component</type>
 		<version>2.4.4</version>
         <note>
             <item>Update : 05/09/2023</item>
