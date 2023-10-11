@@ -1,8 +1,8 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.4.3
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * Version			: 2.4.6
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
  * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
@@ -36,7 +36,7 @@ $ug_space_between_rows = $this->cgg_params->get('ug_space_between_rows');
 $ug_space_between_cols = $this->cgg_params->get('ug_space_between_cols');
 $ug_min_columns = $this->cgg_params->get('ug_min_columns');
 $ug_tile_height = $this->cgg_params->get('ug_tile_height');
-$ug_tile_width = $this->cgg_params->get('ug_tile_width');
+$ug_tile_width = $this->cgg_params->get('ug_tile_width',200);
 $ug_carousel_autoplay_timeout = $this->cgg_params->get('ug_carousel_autoplay_timeout');
 $ug_carousel_scroll_duration = $this->cgg_params->get('ug_carousel_scroll_duration');
 $ug_link = $this->cgg_params->get('ug_link');

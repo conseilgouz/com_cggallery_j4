@@ -88,7 +88,7 @@ function go_gallery (myid,options) {
 			jQuery.extend($params,{tiles_space_between_rows:parseInt(options.ug_space_between_rows),tiles_space_between_cols:parseInt(options.ug_space_between_cols),tiles_min_columns:parseInt(options.ug_min_columns)});
 		}
 		if (options.ug_tiles_type == "tilesgrid") { 
-			jQuery.extend($params,{gallery_theme: "tilesgrid",grid_num_rows:parseInt(options.ug_grid_num_rows),tile_height:parseInt(options.ug_tile_height),grid_space_between_rows:parseInt(options.ug_space_between_rows),grid_space_between_cols:parseInt(options.ug_space_between_cols)});
+			jQuery.extend($params,{gallery_theme: "tilesgrid",grid_num_rows:parseInt(options.ug_grid_num_rows),tile_width:parseInt(options.ug_tile_width),tile_height:parseInt(options.ug_tile_height),grid_space_between_rows:parseInt(options.ug_space_between_rows),grid_space_between_cols:parseInt(options.ug_space_between_cols)});
 		}
 		if (options.ug_tiles_type == "nested") {
 			jQuery.extend($params,{gallery_theme: "tiles",tiles_type: "nested",tiles_nested_optimal_tile_width:parseInt(options.ug_tile_width),tiles_space_between_rows:parseInt(options.ug_space_between_rows),tiles_space_between_cols:parseInt(options.ug_space_between_cols)});
