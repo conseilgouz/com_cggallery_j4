@@ -1,8 +1,8 @@
 /**
 * CG Gallery Component  - Joomla Module 
-* Version			: 2.4.5
+* Version			: 2.4.7
 * Package			: Joomla 4.x/5.x
-* copyright 		: Copyright (C) 2023 ConseilGouz. All rights reserved.
+* copyright 		: Copyright (C) 2024 ConseilGouz. All rights reserved.
 * license    		: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
 */
 jQuery(document).ready(function($) {
@@ -53,7 +53,7 @@ function go_gallery (myid,options) {
 			jQuery.extend($params,{slider_control_zoom: true});
 			jQuery.extend($params,{slider_enable_zoom_panel: true});
 		}
-		if (optionsoptions.ug_grid_show_icons == 'false') {
+		if (options.ug_grid_show_icons == 'false') {
 			jQuery.extend($params,{slider_enable_arrows:false,slider_enable_progress_indicator:false,slider_enable_play_button:false,slider_enable_fullscreen_button:false,slider_enable_zoom_panel:false,	strippanel_enable_handle:false,	gridpanel_enable_handle:false});
 		}
 	}
