@@ -11,6 +11,7 @@
             <item>Helper : fix JFactory/JRoute errors</item>
             <item>Field sqlnoerr</item>
             <item>Fix PNG/GIF thumbnail creation</item>
+            <item>desc.txt : leave native characters (greek for example)</item>
         </fix>
         <change>
             <item>Moving db requests from helper to model</item>

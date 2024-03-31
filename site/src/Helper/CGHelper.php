@@ -105,7 +105,7 @@ class CGHelper
             $contents = substr($contents, 3);  // remove UTF-8 BOM
         }
         // $contents = str_replace("\r", "\n", $contents);  // normalize line endings
-        $contents = strtr($contents, 'áàâäãåçéèêëíìîïñóòôöõúùûüýÿ', 'aaaaaaceeeeiiiinooooouuuuyy');
+        // $contents = strtr($contents, 'áàâäãåçéèêëíìîïñóòôöõúùûüýÿ', 'aaaaaaceeeeiiiinooooouuuuyy');
         // split into lines
         $matches = array();
         preg_match_all('/^([^|\n]+)(?:[|]([^|\n]*)(?:[|]([^\n]*))?)?$/mu', $contents, $matches, PREG_SET_ORDER);
