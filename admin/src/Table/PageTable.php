@@ -85,6 +85,7 @@ class PageTable extends Table implements VersionableTableInterface
 			$page_params['ug_text_lgth'] = $compl['ug_text_lgth'];
 			$page_params['ug_link'] = $compl['ug_link'];
 			$page_params['ug_lightbox'] = $compl['ug_lightbox'];
+			$page_params['ug_skin'] = $compl['ug_skin'];
 			$page_params['ug_zoom'] = $compl['ug_zoom'];
 			$page_params['ug_dir_or_image'] = $compl['ug_dir_or_image'];
 			$page_params['ug_autothumb'] = $compl['ug_autothumb'];

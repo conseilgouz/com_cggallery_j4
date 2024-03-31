@@ -66,6 +66,7 @@ class ImportController extends FormController
             $page_params['ug_text_lgth'] = $mod_params->ug_text_lgth;
             $page_params['ug_link'] = $mod_params->ug_link;
             $page_params['ug_lightbox'] = $mod_params->ug_lightbox;
+            $page_params['ug_skin'] = $mod_params->ug_skin;
             $page_params['ug_zoom'] = $mod_params->ug_zoom;
             $page_params['ug_dir_or_image'] = $mod_params->ug_dir_or_image;
             $page_params['ug_autothumb'] = $mod_params->ug_autothumb;

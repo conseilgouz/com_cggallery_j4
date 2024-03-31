@@ -1,9 +1,9 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.3.0
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * Version			: 2.4.8
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGGallery\Administrator\Model;
@@ -59,6 +59,7 @@ class PageModel extends AdminModel {
         $data->ug_text_lgth = $compl['ug_text_lgth'];
         $data->ug_link = $compl['ug_link'];
         $data->ug_lightbox = $compl['ug_lightbox'];
+        $data->ug_skin = $compl['ug_skin'];        
 		$data->ug_zoom = $compl['ug_zoom'];
         $data->ug_dir_or_image = $compl['ug_dir_or_image'];
         $data->ug_autothumb = $compl['ug_autothumb'];
