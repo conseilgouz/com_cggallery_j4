@@ -43,6 +43,7 @@ $ug_lightbox = $this->cgg_params->get('ug_lightbox');
 $ug_zoom = $this->cgg_params->get('ug_zoom', 'true');
 $ug_grid_thumbs_pos = $this->cgg_params->get('ug_grid_thumbs_pos');
 $ug_grid_show_icons = $this->cgg_params->get('ug_grid_show_icons');
+$ug_skin = $this->cgg_params->get('ug_skin', 'default');
 
 $ug_articles = $this->cgg_params->get('ug_articles', 'articles');
 
@@ -51,6 +52,10 @@ $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
 
 $wa->registerAndUseStyle('unitegallery', $comfield.'unitegallery/css/unite-gallery.css');
 $wa->registerAndUseScript('unitegallery', $comfield.'unitegallery/js/unitegallery.min.js');
+
+if ($ug_skin != 'default') {
+    $wa->registerAndUseScript('uniteskin',$comfield.'unitegallery/skins/'.$ug_skin.'/'.$ug_skin.'.css');
+}
 
 if ($ug_type == "tiles") {
     if ($ug_tiles_type == "tilesgrid") {
@@ -267,7 +272,8 @@ $document->addScriptOptions(
           'ug_carousel_scroll_duration' => $ug_carousel_scroll_duration,
           'ug_link' => $ug_link,'ug_zoom' => $ug_zoom,
           'ug_lightbox' => $ug_lightbox,
-          'ug_grid_thumbs_pos' => $ug_grid_thumbs_pos, 'ug_grid_show_icons' => $ug_grid_show_icons
+          'ug_grid_thumbs_pos' => $ug_grid_thumbs_pos, 'ug_grid_show_icons' => $ug_grid_show_icons,
+          'ug_skin'=>$ug_skin
 )
 );
 

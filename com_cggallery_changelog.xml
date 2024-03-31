@@ -16,6 +16,9 @@
         <change>
             <item>Moving db requests from helper to model</item>
         </change>
+		<addition>
+			<item>add skin selection in carousel mode</item>
+		</addition>
     </changelog>
 	<changelog>
 		<element>com_cggallery</element>
