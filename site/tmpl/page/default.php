@@ -54,7 +54,7 @@ $wa->registerAndUseStyle('unitegallery', $comfield.'unitegallery/css/unite-galle
 $wa->registerAndUseScript('unitegallery', $comfield.'unitegallery/js/unitegallery.min.js');
 
 if ($ug_skin != 'default') {
-    $wa->registerAndUseScript('uniteskin',$comfield.'unitegallery/skins/'.$ug_skin.'/'.$ug_skin.'.css');
+    $wa->registerAndUseStyle('uniteskin',$comfield.'unitegallery/skins/'.$ug_skin.'/'.$ug_skin.'.css');
 }
 
 if ($ug_type == "tiles") {
