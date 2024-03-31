@@ -1,22 +1,19 @@
 <?php
 /**
- * @component     CG Isotope
- * Version			: 1.1.0
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @component     CG Gallery
+ * Version			: 2.4.8
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
+namespace ConseilGouz\Component\CGGallery\Administrator\Field;
 defined('JPATH_PLATFORM') or die;
+use Joomla\CMS\Form\Field\SqlField;
+use Joomla\CMS\Factory;
 
-JFormHelper::loadFieldClass('sql');
-
-class JFormFieldSQLnoerr extends JFormFieldSQL
+class SQLnoerrField extends SqlField
 {
 	public $type = 'SQLnoerr';
-	protected $keyField;
-	protected $valueField;
-	protected $translate = false;
-	protected $query;
 
 	/**
 	 * Method to check if SQL query contains errors
@@ -34,16 +31,22 @@ class JFormFieldSQLnoerr extends JFormFieldSQL
 		if ($this->query)
 		{
 			// Get the database object.
-			$db = JFactory::getDbo();
+			$db = Factory::getDbo();
 
+			try
+			{
 			// Set the query and get the result list.
-			$db->setQuery($this->query);
-
+				$db->setQuery($this->query);
+			}
+			catch (\Exception $e)
+			{
+				 return $options; // SQL Error : return empty
+			}
 			try
 			{
 				$items = $db->loadObjectlist();
 			}
-			catch (JDatabaseExceptionExecuting $e)
+			catch (\Exception $e)
 			{
 				 return $options; // SQL Error : return empty
 			}
