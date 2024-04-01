@@ -1,8 +1,19 @@
 <changelogs>
-	<changelog>
-		<element>com_cggallery</element>
-		<type>component</type>
-		<version>2.4.9</version>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.10</version>
+        <note>
+            <item>Update : 01/04/2024</item>
+        </note>
+        <fix>
+            <item>Show-hide online help in single image selection</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.9</version>
         <note>
             <item>Update : 01/04/2024</item>
         </note>
@@ -10,10 +21,21 @@
             <item>Carousel : hide link iccon if no link has been defined</item>
         </fix>
     </changelog>
-	<changelog>
-		<element>com_cggallery</element>
-		<type>component</type>
-		<version>2.4.8</version>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.9</version>
+        <note>
+            <item>Update : 01/04/2024</item>
+        </note>
+        <fix>
+            <item>Carousel : hide link iccon if no link has been defined</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.8</version>
         <note>
             <item>Update : 31/03/2024</item>
         </note>
@@ -27,71 +49,71 @@
         <change>
             <item>Moving db requests from helper to model</item>
         </change>
-		<addition>
-			<item>add skin selection in carousel mode</item>
-		</addition>
+        <addition>
+            <item>add skin selection in carousel mode</item>
+        </addition>
     </changelog>
-	<changelog>
-		<element>com_cggallery</element>
-		<type>component</type>
-		<version>2.4.7</version>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.7</version>
         <note>
             <item>Update : 25/01/2024</item>
         </note>
-		<fix>
-			<item>Grid : js error 'optionsoptions is not defined'</item>
-		</fix>
-	</changelog>    
-	<changelog>
-		<element>com_cggallery</element>
-		<type>component</type>
-		<version>2.4.6</version>
+        <fix>
+            <item>Grid : js error 'optionsoptions is not defined'</item>
+        </fix>
+    </changelog>    
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.6</version>
         <note>
             <item>Update : 11/10/2023</item>
         </note>
-		<fix>
-			<item>Tule/Grid mode : add images width parameter</item>
-		</fix>
-	</changelog>
-	<changelog>
-		<element>com_cggallery</element>
-		<type>component</type>
-		<version>2.4.5</version>
+        <fix>
+            <item>Tule/Grid mode : add images width parameter</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.5</version>
         <note>
             <item>Update : 05/09/2023</item>
         </note>
-		<fix>
-			<item>reverse init.js fix from 2.4.4</item>
-		</fix>
-	</changelog>
-	<changelog>
-		<element>com_cggallery</element>
-		<type>component</type>
-		<version>2.4.4</version>
+        <fix>
+            <item>reverse init.js fix from 2.4.4</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.4</version>
         <note>
             <item>Update : 05/09/2023</item>
         </note>
-		<fix>
-			<item>Add Path::clean($root,'/') in getFolder function</item>
-			<item>Select images directory in a list instead of a text field to prevent errors</item>
-			<item>init.js : options conflict with other CG Extensions</item>
-		</fix>
-	</changelog>
-	<changelog>
-		<element>com_cggallery</element>
-		<type>component</type>
-		<version>2.4.3</version>
+        <fix>
+            <item>Add Path::clean($root,'/') in getFolder function</item>
+            <item>Select images directory in a list instead of a text field to prevent errors</item>
+            <item>init.js : options conflict with other CG Extensions</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.3</version>
         <note>
             <item>Update : 30/07/2023</item>
         </note>
-		<fix>
-			<item>PHP 8.2 : suppress notices</item>
-		</fix>
-	</changelog>
-	<changelog>
-		<element>com_cggallery</element>
-		<type>component</type>
-		<version>2.4.2</version>
+        <fix>
+            <item>PHP 8.2 : suppress notices</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.2</version>
         <note>
             <item>Update : 23/07/2023</item>
         </note>
