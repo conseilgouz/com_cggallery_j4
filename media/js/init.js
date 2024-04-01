@@ -1,6 +1,6 @@
 /**
 * CG Gallery Component  - Joomla Module 
-* Version			: 2.4.8
+* Version			: 2.4.9
 * Package			: Joomla 4.x/5.x
 * copyright 		: Copyright (C) 2024 ConseilGouz. All rights reserved.
 * license    		: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
@@ -60,9 +60,9 @@ function go_gallery (myid,options) {
 	if (options.ug_type == "carousel") {
 		jQuery.extend($params,{gallery_theme:options.ug_type,theme_navigation_margin: 5,tile_width:parseInt(options.ug_tile_width),tile_height:parseInt(options.ug_tile_height),
 		carousel_space_between_rows:parseInt(options.ug_space_between_rows),carousel_space_between_tiles:parseInt(options.ug_space_between_cols),carousel_scroll_duration:parseInt(options.ug_carousel_scroll_duration),carousel_autoplay_timeout:parseInt(options.ug_carousel_autoplay_timeout)});
-		if (options.ug_link == "true") {
+		/*if (options.ug_link == "true") {
 			jQuery.extend($params,{tile_as_link:true,tile_link_newpage: true});
-		}		
+		}*/		
 	}
 	if (options.ug_type == "slider") { 
 		jQuery.extend($params,{gallery_theme:options.ug_type,gallery_height:parseInt(options.ug_tile_height),gallery_width:parseInt(options.ug_tile_width),carousel_space_between_tiles:parseInt(options.ug_space_between_cols),slider_transition_speed:parseInt(options.ug_carousel_scroll_duration),gallery_play_interval:parseInt(options.ug_carousel_autoplay_timeout),slider_scale_mode: "fill",slider_enable_fullscreen_button: true});
