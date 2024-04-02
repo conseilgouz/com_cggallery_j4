@@ -27,7 +27,7 @@ $uri = Uri::getInstance();
 
 $this->cgg_params = CGHelper::getParams($this->page, $this->getModel());
 $ug_type	= $this->cgg_params->get('ug_type', '');
-$ug_texte	= $this->cgg_params->get('ug_texte', '');
+$ug_texte	= $this->cgg_params->get('ug_text', '');
 $ug_tiles_type = $this->cgg_params->get('ug_tiles_type', '');
 $ug_big_dir = $this->cgg_params->get('ug_big_dir', '');
 $ug_grid_num_rows = $this->cgg_params->get('ug_grid_num_rows');
@@ -54,7 +54,7 @@ $wa->registerAndUseStyle('unitegallery', $comfield.'unitegallery/css/unite-galle
 $wa->registerAndUseScript('unitegallery', $comfield.'unitegallery/js/unitegallery.min.js');
 
 if ($ug_skin != 'default') {
-    $wa->registerAndUseStyle('uniteskin',$comfield.'unitegallery/skins/'.$ug_skin.'/'.$ug_skin.'.css');
+    $wa->registerAndUseStyle('uniteskin', $comfield.'unitegallery/skins/'.$ug_skin.'/'.$ug_skin.'.css');
 }
 
 if ($ug_type == "tiles") {
@@ -273,7 +273,7 @@ $document->addScriptOptions(
           'ug_link' => $ug_link,'ug_zoom' => $ug_zoom,
           'ug_lightbox' => $ug_lightbox,
           'ug_grid_thumbs_pos' => $ug_grid_thumbs_pos, 'ug_grid_show_icons' => $ug_grid_show_icons,
-          'ug_skin'=>$ug_skin
+          'ug_skin' => $ug_skin
 )
 );
 

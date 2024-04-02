@@ -24,11 +24,8 @@ class CGHelper
     public static function getParams($id, $model)
     {
         $table = $model->getTable();
-        $table->load((int)$id);
-        $lesparams = json_decode($table->page_params, true);
-        $params = new Registry(json_encode($lesparams));
-        $params->set('slides', $table->slides);
-        return $params;
+        $item = $table->load((int)$id);
+        return $table;
     }
     public static function getFolder($dir, $model)
     {

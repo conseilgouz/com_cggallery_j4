@@ -1,10 +1,10 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.4.0
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2023 ConseilGouz. All Rights Reserved.
- * @author ConseilGouz 
+ * Version			: 3.0.0
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
+ * @author ConseilGouz
 **/
 // no direct access
 defined('_JEXEC') or die;
@@ -16,6 +16,7 @@ use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Helper\ContentHelper;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
+
 // JHtml::_('behavior.tooltip');
 HtmlHelper::_('behavior.multiselect');
 
@@ -24,10 +25,10 @@ $userId		= $user->get('id');
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
 $canOrder	= ContentHelper::getActions('com_cggallery');
-$saveOrder	= $listOrder=='ordering';
+$saveOrder	= $listOrder == 'ordering';
 ?>
 <form action="<?php echo Route::_('index.php?option=com_cggallery&view=pages'); ?>" method="post" name="adminForm" id="adminForm">
-	<?php if (!empty( $this->sidebar)) : ?>
+	<?php if (!empty($this->sidebar)) : ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
 	</div>
@@ -70,10 +71,10 @@ $saveOrder	= $listOrder=='ordering';
 					<?php echo HtmlHelper::_('grid.sort', 'JGRID_HEADING_ID', 't.id', $listDirn, $listOrder); ?>
 				</th>
 				<th class="center">
-					<?php echo HtmlHelper::_('grid.sort',  'CG_GAL_TITLE', 't.title', $listDirn, $listOrder); ?>
+					<?php echo HtmlHelper::_('grid.sort', 'CG_GAL_TITLE', 't.title', $listDirn, $listOrder); ?>
 				</th>
 				<th class="center">
-					<?php echo HtmlHelper::_('grid.sort',  'CG_GAL_TYPE', 't.info', $listDirn, $listOrder); ?>
+					<?php echo HtmlHelper::_('grid.sort', 'CG_GAL_TYPE', 't.ug_type', $listDirn, $listOrder); ?>
 				</th>
                <th width="15%">
                     <?php echo HtmlHelper::_('searchtools.sort', 'CG_GAL_LANGUAGE', 'language', $listDirn, $listOrder); ?>
@@ -93,12 +94,12 @@ $saveOrder	= $listOrder=='ordering';
 		</tfoot>
 		<tbody>
 		<?php foreach ($this->pages as $i => $page) :
-			$ordering	= ($listOrder == 'ordering');
-			$canCreate	= $user->authorise('core.create');
-			$canEdit	= $user->authorise('core.edit');
-			$canCheckin	= $user->authorise('core.manage',		'com_checkin') || $page->checked_out == $userId || $page->checked_out == 0;
-			$canChange	= $user->authorise('core.edit.state') && $canCheckin;
-			?>
+		    $ordering	= ($listOrder == 'ordering');
+		    $canCreate	= $user->authorise('core.create');
+		    $canEdit	= $user->authorise('core.edit');
+		    $canCheckin	= $user->authorise('core.manage', 'com_checkin') || $page->checked_out == $userId || $page->checked_out == 0;
+		    $canChange	= $user->authorise('core.edit.state') && $canCheckin;
+		    ?>
 			<tr class="row<?php echo $i % 2; ?>">
 				<td class="center">
 					<?php echo HtmlHelper::_('grid.id', $i, $page->id); ?>
@@ -114,14 +115,17 @@ $saveOrder	= $listOrder=='ordering';
 					</a>
 				</td>
 				<td class="center">
-                    <?php 
-						$compl = new Registry($page->page_params);
-						$text = "";
-						$msg = "";
-						if ($compl['ug_type'] == 'tiles') $msg = '('.$compl['ug_tiles_type'].')';
-						$text .= $compl['ug_type'].' : '.$msg;
-						if (strlen($text) > 70) $text = substr($text,0,70).'...';
-						echo $text; ?>                     
+                    <?php
+		                $text = "";
+		    $msg = "";
+		    if ($page->ug_type == 'tiles') {
+		        $msg = '('.$page->ug_tiles_type.')';
+		    }
+		    $text .= $page->ug_type.' : '.$msg;
+		    if (strlen($text) > 70) {
+		        $text = substr($text, 0, 70).'...';
+		    }
+		    echo $text; ?>                     
 				</td>
                 <td align="center">
                     <?php echo LayoutHelper::render('joomla.content.language', $page); ?>
