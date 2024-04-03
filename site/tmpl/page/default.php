@@ -223,11 +223,7 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
         $link = null;
         $imgdesc = $imgcaption;
         if (isset($slidearticleid) && $slidearticleid) {
-            if ($ug_articles == 'articles') {
-                $link = $this->getModel()->getArticle($item);
-            } else {
-                $link = CGHelper::getArticleK2($item, $this->cgg_params);
-            }
+            $link = $this->getModel()->getArticle($item);
             if ($imgdesc == '') {
                 $imgdesc = $item->article->text;
             } // imgdesc empty => take article

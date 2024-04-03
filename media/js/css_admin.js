@@ -18,7 +18,7 @@ jQuery(document).ready(function(){
 		} else {
 			jQuery( "#jform_params_pagination-lbl" ).parent(".control-label").parent(".control-group").css({"float":"none"});
 		}
-	} else if ((this.id == "jform_params_iso_entree0") || (this.id == "jform_params_iso_entree2")) { // weblink or K2
+	} else if ((this.id == "jform_params_iso_entree0") || (this.id == "jform_params_iso_entree2")) { // weblink 
 		jQuery( "#jform_params_introtext_limit-lbl" ).parent(".control-label").parent(".control-group").css("float","none");
 		jQuery( "#jform_params_iso_count-lbl" ).parent(".control-label").parent(".control-group").css("float","none");
 		jQuery( "#jform_params_pagination-lbl" ).parent(".control-label").parent(".control-group").css({"float":"none"});

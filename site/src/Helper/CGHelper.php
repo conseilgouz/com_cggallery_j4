@@ -59,11 +59,6 @@ class CGHelper
         }
         return $root;
     }
-
-    public static function getArticleK2(&$item, $params)
-    {
-        return '';
-    }
     /**
      * Truncates text blocks over the specified character limit and closes
      */
