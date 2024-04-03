@@ -1,7 +1,7 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.4.8
+ * Version			: 3.0.2
  * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
  * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
@@ -99,7 +99,10 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
     }
     // from https://digitaldisseny.com/en/blog/96-joomla-jfolder-filter-for-file-extensions
     $filter = null;
-    $allowedExtensions = json_decode($this->cgg_params->get('imgtypes'));
+    $allowedExtensions = null;
+    if ($this->cgg_params->get('imgtypes')) {
+        $allowedExtensions = json_decode($this->cgg_params->get('imgtypes'));
+    }
     if ($allowedExtensions) {
         $allowedExtensions = array_merge($allowedExtensions, array_map('strtoupper', $allowedExtensions));
         // Build the filter. Will return something like: "jpg|png|JPG|PNG|gif|GIF"
