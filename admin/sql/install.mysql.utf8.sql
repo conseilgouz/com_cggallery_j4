@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `#__cggallery_page` (
 `ug_grid_thumbs_pos` varchar(10) DEFAULT 'left',
 `ug_grid_show_icons` varchar(10) DEFAULT 'false',
 `ug_articles` text,
+`imgtypes` varchar(50) DEFAULT NULL;
 `slides` text NOT NULL ,
 `created` datetime NOT NULL DEFAULT '1980-01-01 00:00:00',
 `created_by` int(10) unsigned NOT NULL DEFAULT '0',

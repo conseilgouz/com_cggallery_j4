@@ -97,7 +97,16 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
     if (strpos($this->cgg_params->get('ug_big_dir', ''), '$') !== false) { // on a un répertoire paramétrable
         CGHelper::thumbnailFromDir($ug_big_dir, $this->cgg_params->get('ug_compression'));
     }
-    $files = Folder::files($ug_big_dir, null, null, null, array('desc.txt','index.html','.htaccess'));
+    // from https://digitaldisseny.com/en/blog/96-joomla-jfolder-filter-for-file-extensions
+    $filter = null;
+    $allowedExtensions = json_decode($this->cgg_params->get('imgtypes'));
+    if ($allowedExtensions) {
+        $allowedExtensions = array_merge($allowedExtensions, array_map('strtoupper', $allowedExtensions));
+        // Build the filter. Will return something like: "jpg|png|JPG|PNG|gif|GIF"
+        $filter = implode('|', $allowedExtensions);
+        $filter = "^.*\.(" . implode('|', $allowedExtensions) .")$";
+    }
+    $files = Folder::files($ug_big_dir, $filter, null, null, array('desc.txt','index.html','.htaccess'));
     $desc = CGHelper::getDesc($ug_big_dir); // récupération fichier description s'il existe
     if (count($files) == 0) { ?>
 		<img alt=""

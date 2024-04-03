@@ -68,6 +68,7 @@ class PageTable extends Table implements VersionableTableInterface
         if (($task == "save") || ($task == "apply")) {
             $data = $input->getVar('jform', array(), 'post', 'array');
             $this->slides = json_encode($data['slideslist']);
+            $this->imgtypes = json_encode($data['imgtypes']);
             // texteara with special html tags to keep
             $perso = $input->getRaw('jform', 'perso', 'post', 'array');
             $data['perso'] = $perso['perso'];
@@ -77,6 +78,7 @@ class PageTable extends Table implements VersionableTableInterface
         $data['id']   = $key;
         $data['title'] = $this->title;
         $data['slides'] = $this->slides;
+        $data['imgtypes'] = $this->imgtypes;
         $data['state'] = $this->state;
         $data['language'] = $this->language;
 
