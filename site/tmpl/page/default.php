@@ -1,7 +1,7 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 3.0.2
+ * Version			: 3.0.3
  * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
  * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
@@ -97,9 +97,6 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
         echo '</div>';  // on ferme la div ouverte
         return false;
     }
-    if (strpos($this->cgg_params->get('ug_big_dir', ''), '$') !== false) { // on a un répertoire paramétrable
-        CGHelper::thumbnailFromDir($ug_big_dir, $this->cgg_params->get('ug_compression'));
-    }
     // from https://digitaldisseny.com/en/blog/96-joomla-jfolder-filter-for-file-extensions
     $filter = null;
     $allowedExtensions = null;
@@ -113,6 +110,9 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
         $filter = "^.*\.(" . implode('|', $allowedExtensions) .")$";
     } else {
         $filter = "^.*\.(jpg|jpeg|png|webp|gif|JPG|JPEG|PNG|WEBP|GIF)$";
+    }
+    if (strpos($this->cgg_params->get('ug_big_dir', ''), '$') !== false) { // on a un répertoire paramétrable
+        CGHelper::thumbnailFromDir($ug_big_dir,$filter, $this->cgg_params->get('ug_compression'));
     }
     $files = Folder::files($ug_big_dir, $filter, null, null, array('desc.txt','index.html','.htaccess'));
     $desc = CGHelper::getDesc($ug_big_dir); // récupération fichier description s'il existe

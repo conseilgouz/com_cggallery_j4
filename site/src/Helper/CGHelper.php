@@ -1,7 +1,7 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.4.8
+ * Version			: 3.0.3
  * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
  * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
@@ -136,9 +136,9 @@ class CGHelper
         }
         return false;
     }
-    public static function thumbnailFromDir($dir, $compression)
+    public static function thumbnailFromDir($dir, $filter, $compression)
     {
-        $files = Folder::files($dir, null, null, null, null, array('desc.txt','index.html','.htaccess'));
+        $files = Folder::files($dir, $filter, null, null, null, array('desc.txt','index.html','.htaccess'));
         $_dir = $dir;
         $nb = 0;
         if (count($files) > 0) {
