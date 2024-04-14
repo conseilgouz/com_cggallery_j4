@@ -1,7 +1,7 @@
 <?php
 /**
 * CG Gallery Component  - Joomla 4.x/5.x Component
-* Version			: 3.0.0
+* Version			: 3.0.3
 * Package			: CG Gallery
 * copyright 		: Copyright (C) 2024 ConseilGouz. All rights reserved.
 * license    		: https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
@@ -135,7 +135,22 @@ class com_cggalleryInstallerScript
             $data->page_params = "";
             $result = $db->updateObject('#__cggallery_page', $data, 'id', $updateNulls);
         }
-
+        // version 3.0.3 : remove images/ from ug_big_dir
+        $pages = $db->setQuery(
+            $db->getQuery(true)
+            ->select('id,ug_big_dir')
+            ->from('#__cggallery_page')
+        )->loadObjectList();
+        foreach($pages as $onepage) {
+            if (($onepage->ug_big_dir == "") || !str_starts_with($onepage->ug_big_dir,'images/')){
+                continue;
+            }
+            $updateNulls = true;
+            $data = new \StdClass();
+            $data->id = $onepage->id;
+            $data->ug_big_dir = ltrim($onepage->ug_big_dir,'images/');
+            $result = $db->updateObject('#__cggallery_page', $data, 'id', $updateNulls);
+        }
         // remove obsolete update sites
         $query = $db->getQuery(true)
             ->delete('#__update_sites')
