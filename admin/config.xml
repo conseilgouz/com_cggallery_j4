@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
     <fieldset label="CG_GALLERY" name="CG_GALLERY">
-        
+        <field
+            name="base_dir"
+            type="text"
+            label="Base directory"
+            description="Select images base directory"
+            default="images"
+        />
     </fieldset>
     <fieldset 
         name="permissions"

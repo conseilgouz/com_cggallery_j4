@@ -260,11 +260,12 @@ class CGHelper
                     }
                     ob_start();
                     if (!@ImagePNG($image2, null, $compression)) {
+                        ob_end_clean();
                         return 'ErrorWriteFile';
                     }
-                    $imgGIFToWrite = ob_get_contents();
+                    $imgPNGToWrite = ob_get_contents();
                     ob_end_clean();
-                    if(!File::write('../'.$fileOut, $imgGIFToWrite)) {
+                    if(!File::copy($fileIn, $fileOut)) {
                         return 'ErrorWriteFile';
                     }
 
@@ -275,13 +276,13 @@ class CGHelper
                         return 'ErrorNoGIFFunction';
                     }
                     ob_start();
-                    if (!@ImageGIF($image2, null, $compression)) {
+                    if (!@ImageGIF($image2, null)) {
                         ob_end_clean();
                         return 'ErrorWriteFile';
                     }
                     $imgGIFToWrite = ob_get_contents();
                     ob_end_clean();
-                    if(!File::write('../'.$fileOut, $imgGIFToWrite)) {
+                    if(!File::write($fileOut, $imgGIFToWrite)) {
                         return 'ErrorWriteFile';
                     }
                     break;

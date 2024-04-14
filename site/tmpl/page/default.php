@@ -10,6 +10,7 @@
 // no direct access
 
 defined('_JEXEC') or die;
+use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use ConseilGouz\Component\CGGallery\Site\Helper\CGHelper;
@@ -24,12 +25,14 @@ $app = Factory::getApplication();
 $com_id = $app->input->getInt('Itemid');
 
 $uri = Uri::getInstance();
+$base_dir = ComponentHelper::getParams('com_cggallery')->get('base_dir');
+
 
 $this->cgg_params = CGHelper::getParams($this->page, $this->getModel());
 $ug_type	= $this->cgg_params->get('ug_type', '');
 $ug_texte	= $this->cgg_params->get('ug_text', '');
 $ug_tiles_type = $this->cgg_params->get('ug_tiles_type', '');
-$ug_big_dir = $this->cgg_params->get('ug_big_dir', '');
+$ug_big_dir = $base_dir.'/'.$this->cgg_params->get('ug_big_dir', '');
 $ug_grid_num_rows = $this->cgg_params->get('ug_grid_num_rows');
 $ug_space_between_rows = $this->cgg_params->get('ug_space_between_rows');
 $ug_space_between_cols = $this->cgg_params->get('ug_space_between_cols');
@@ -108,6 +111,8 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
         // Build the filter. Will return something like: "jpg|png|JPG|PNG|gif|GIF"
         $filter = implode('|', $allowedExtensions);
         $filter = "^.*\.(" . implode('|', $allowedExtensions) .")$";
+    } else {
+        $filter = "^.*\.(jpg|jpeg|png|webp|gif|JPG|JPEG|PNG|WEBP|GIF)$";
     }
     $files = Folder::files($ug_big_dir, $filter, null, null, array('desc.txt','index.html','.htaccess'));
     $desc = CGHelper::getDesc($ug_big_dir); // récupération fichier description s'il existe
