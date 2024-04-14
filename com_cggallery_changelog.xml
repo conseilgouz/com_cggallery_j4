@@ -9,6 +9,9 @@
         <addition>
             <item>Add base directy in config (default: images)</item>
         </addition>
+        <fix>
+            <item>Handle webp images</item>
+        </fix>
     </changelog>
     <changelog>
         <element>com_cggallery</element>

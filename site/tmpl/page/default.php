@@ -112,7 +112,7 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
         $filter = "^.*\.(jpg|jpeg|png|webp|gif|JPG|JPEG|PNG|WEBP|GIF)$";
     }
     if (strpos($this->cgg_params->get('ug_big_dir', ''), '$') !== false) { // on a un répertoire paramétrable
-        CGHelper::thumbnailFromDir($ug_big_dir,$filter, $this->cgg_params->get('ug_compression'));
+        CGHelper::thumbnailFromDir($ug_big_dir, $filter, $this->cgg_params->get('ug_compression'));
     }
     $files = Folder::files($ug_big_dir, $filter, null, null, array('desc.txt','index.html','.htaccess'));
     $desc = CGHelper::getDesc($ug_big_dir); // récupération fichier description s'il existe
@@ -207,10 +207,10 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
                 ?>
 				<img alt="<?php echo $bigfile;?>" 
 					src="<?php
-                    if (!@is_file($ug_thumb_dir.'/'.$files[$i])) { // create thumbnail file if it does not exist
-                        CGHelper::createThumbNail($ug_big_dir.'/'.$files[$i], $ug_thumb_dir.'/'.$files[$i], $this->cgg_params->get('ug_compression'));
+                    if (!@is_file($ug_thumb_dir.$files[$i])) { // create thumbnail file if it does not exist
+                        CGHelper::createThumbNail($ug_big_dir.'/'.$files[$i], $ug_thumb_dir.$files[$i], $this->cgg_params->get('ug_compression'));
                     }
-                echo $uri->root().$ug_thumb_dir.'/'.$files[$i];?>"
+                echo $uri->root().$ug_thumb_dir.$files[$i];?>"
 				<?php if (@is_file($ug_big_dir.'/'.$files[$i])) { ?>
 					data-image="<?php echo $uri->root().$ug_big_dir; ?>/<?php echo $bigfile;?>"
 				<?php } else {?>

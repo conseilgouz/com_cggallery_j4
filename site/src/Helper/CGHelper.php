@@ -219,6 +219,16 @@ class CGHelper
                     return 'ErrorWBMPFunction';
                 }
                 break;
+            case IMAGETYPE_WEBP:
+                if (!function_exists('ImageCreateFromWEBP')) {
+                    return 'ErrorNoWBMPFunction';
+                }
+                try {
+                    $image1 = ImageCreateFromWEBP($fileIn);
+                } catch(\Exception $exception) {
+                    return 'ErrorWBMPFunction';
+                }
+                break;
             default:
                 return 'ErrorNotSupportedImage';
                 break;
@@ -233,7 +243,7 @@ class CGHelper
             ImageCopyResampled($image2, $image1, $dst[0], $dst[1], $src[0], $src[1], $dst[2], $dst[3], $src[2], $src[3]);
 
             // Create the file
-            $typeOut = ($type == IMAGETYPE_WBMP) ? IMAGETYPE_PNG : $type;
+            $typeOut = $type;
             header("Content-type: ". image_type_to_mime_type($typeOut));
 
             switch($typeOut) {
@@ -286,6 +296,23 @@ class CGHelper
                         return 'ErrorWriteFile';
                     }
                     break;
+                case IMAGETYPE_WEBP:
+                    if (!function_exists('ImageWEBP')) {
+                        return 'ErrorNoWEBPFunction';
+                    }
+                    ob_start();
+
+                    if (!imagewebp($image2, null, $compression)) {
+                        ob_end_clean();
+                        return 'ErrorWriteFile';
+                    }
+                    $imgWEBPToWrite = ob_get_contents();
+                    ob_end_clean();
+                    if(!File::write($fileOut, $imgWEBPToWrite)) {
+                        return 'ErrorWriteFile';
+                    }
+                    break;
+
 
                 default:
                     return 'ErrorNotSupportedImage';
