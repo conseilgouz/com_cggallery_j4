@@ -97,8 +97,7 @@
             <item>Carousel : hide link iccon if no link has been defined</item>
         </fix>
     </changelog>
- 
-	<changelog>
+ 	<changelog>
 		<element>com_cggallery</element>
 		<type>component</type>
 		<version>2.0.0</version>
