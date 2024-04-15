@@ -8,7 +8,7 @@
         </note>
         <fix>
             <item>Set images as default dir if base directory not defined in config</item>
-        </addition>
+        </fix>
     </changelog>
     <changelog>
         <element>com_cggallery</element>
