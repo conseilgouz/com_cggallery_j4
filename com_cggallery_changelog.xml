@@ -2,32 +2,6 @@
     <changelog>
         <element>com_cggallery</element>
         <type>component</type>
-        <version>3.0.4</version>
-        <note>
-            <item>Update : 15/04/2024</item>
-        </note>
-        <fix>
-            <item>Set images as default dir if base directory not defined in config</item>
-        </fix>
-    </changelog>
-    <changelog>
-        <element>com_cggallery</element>
-        <type>component</type>
-        <version>3.0.3</version>
-        <note>
-            <item>Update : 14/04/2024</item>
-        </note>
-        <addition>
-            <item>Add base directy in config (default: images)</item>
-        </addition>
-        <fix>
-            <item>Handle webp images</item>
-            <item>Image selection : image required</item>
-        </fix>
-    </changelog>
-    <changelog>
-        <element>com_cggallery</element>
-        <type>component</type>
         <version>3.0.2</version>
         <note>
             <item>Update : 03/04/2024</item>
