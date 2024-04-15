@@ -1,11 +1,11 @@
 <?php
 /**
  * @component     CG Gallery for Joomla 4.x/5.x
- * Version			: 2.4.0
+ * Version			: 3.0.4
  *
  * @author     ConseilgGouz
- * @copyright (C) 2023 www.conseilgouz.com. All Rights Reserved.
- * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @copyright (C) 2024 www.conseilgouz.com. All Rights Reserved.
+ * @license    GNU/GPLv3 https://www.gnu.org/licenses/gpl-3.0.html
  */
 
 namespace ConseilGouz\Component\CGGallery\Administrator\Field;
@@ -27,7 +27,7 @@ class CgfolderlistField extends FolderlistField
 
     public function setup(\SimpleXMLElement $element, $value, $group = null)
     {
-        $base_dir = ComponentHelper::getParams('com_cggallery')->get('base_dir');
+        $base_dir = ComponentHelper::getParams('com_cggallery')->get('base_dir','images');
         $return = parent::setup($element, $value, $group);
         // Get the path in which to search for file options.
         $this->directory = (string) $base_dir;

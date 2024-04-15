@@ -1,7 +1,7 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 3.0.3
+ * Version			: 3.0.4
  * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
  * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
@@ -25,7 +25,7 @@ $app = Factory::getApplication();
 $com_id = $app->input->getInt('Itemid');
 
 $uri = Uri::getInstance();
-$base_dir = ComponentHelper::getParams('com_cggallery')->get('base_dir');
+$base_dir = ComponentHelper::getParams('com_cggallery')->get('base_dir','images');
 
 
 $this->cgg_params = CGHelper::getParams($this->page, $this->getModel());
