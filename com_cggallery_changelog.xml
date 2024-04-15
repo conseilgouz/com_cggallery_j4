@@ -1,5 +1,103 @@
 <changelogs>
-
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>3.0.4</version>
+        <note>
+            <item>Update : 15/04/2024</item>
+        </note>
+        <fix>
+            <item>Set images as default dir if base directory not defined in config</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>3.0.3</version>
+        <note>
+            <item>Update : 14/04/2024</item>
+        </note>
+        <addition>
+            <item>Add base directy in config (default: images)</item>
+        </addition>
+        <fix>
+            <item>Handle webp images</item>
+            <item>Image selection : image required</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>3.0.2</version>
+        <note>
+            <item>Update : 03/04/2024</item>
+        </note>
+        <fix>
+            <item>Suppress notice Deprecated: json_decode(): Passing null..</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>3.0.1</version>
+        <note>
+            <item>Update : 03/04/2024</item>
+        </note>
+        <remove>
+            <item>Remove K2 support</item>
+        </remove>
+        <change>
+            <item>Clean up unnecessary code/files</item>
+        </change>
+        <addition>
+            <item>Image type filtering</item>
+        </addition>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>3.0.0</version>
+        <note>
+            <item>Update : 02/04/2024</item>
+        </note>
+        <change>
+            <item>SQL : explode params in sql fields</item>
+        </change>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.10</version>
+        <note>
+            <item>Update : 01/04/2024</item>
+        </note>
+        <fix>
+            <item>Show-hide online help in single image selection</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.9</version>
+        <note>
+            <item>Update : 01/04/2024</item>
+        </note>
+        <fix>
+            <item>Carousel : hide link iccon if no link has been defined</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
+        <version>2.4.9</version>
+        <note>
+            <item>Update : 01/04/2024</item>
+        </note>
+        <fix>
+            <item>Carousel : hide link iccon if no link has been defined</item>
+        </fix>
+    </changelog>
+ 
 	<changelog>
 		<element>com_cggallery</element>
 		<type>component</type>
