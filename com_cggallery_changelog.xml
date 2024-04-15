@@ -2,45 +2,6 @@
     <changelog>
         <element>com_cggallery</element>
         <type>component</type>
-        <version>3.0.2</version>
-        <note>
-            <item>Update : 03/04/2024</item>
-        </note>
-        <fix>
-            <item>Suppress notice Deprecated: json_decode(): Passing null..</item>
-        </fix>
-    </changelog>
-    <changelog>
-        <element>com_cggallery</element>
-        <type>component</type>
-        <version>3.0.1</version>
-        <note>
-            <item>Update : 03/04/2024</item>
-        </note>
-        <remove>
-            <item>Remove K2 support</item>
-        </remove>
-        <change>
-            <item>Clean up unnecessary code/files</item>
-        </change>
-        <addition>
-            <item>Image type filtering</item>
-        </addition>
-    </changelog>
-    <changelog>
-        <element>com_cggallery</element>
-        <type>component</type>
-        <version>3.0.0</version>
-        <note>
-            <item>Update : 02/04/2024</item>
-        </note>
-        <change>
-            <item>SQL : explode params in sql fields</item>
-        </change>
-    </changelog>
-    <changelog>
-        <element>com_cggallery</element>
-        <type>component</type>
         <version>2.4.10</version>
         <note>
             <item>Update : 01/04/2024</item>
