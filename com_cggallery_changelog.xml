@@ -7,7 +7,7 @@
             <item>Update : 21/11/2024</item>
         </note>
         <fix>
-            <item>Mysql 8 : sql error on datetime fields</item>
+            <item>Sql error on new install : error on line 32</item>
         </fix>
     </changelog>
     <changelog>
