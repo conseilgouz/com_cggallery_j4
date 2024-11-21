@@ -2,6 +2,17 @@
     <changelog>
         <element>com_cggallery</element>
         <type>component</type>
+        <version>3.0.5</version>
+        <note>
+            <item>Update : 21/11/2024</item>
+        </note>
+        <fix>
+            <item>Mysql 8 : sql error on datetime fields</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
         <version>3.0.4</version>
         <note>
             <item>Update : 15/04/2024</item>
