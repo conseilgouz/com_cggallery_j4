@@ -29,16 +29,16 @@ CREATE TABLE IF NOT EXISTS `#__cggallery_page` (
 `ug_grid_thumbs_pos` varchar(10) DEFAULT 'left',
 `ug_grid_show_icons` varchar(10) DEFAULT 'false',
 `ug_articles` text,
-`imgtypes` varchar(50) DEFAULT NULL;
+`imgtypes` varchar(50) DEFAULT NULL,
 `slides` text NOT NULL ,
-`created` datetime NULL DEFAULT '1980-01-01 00:00:00',
+`created` datetime NOT NULL DEFAULT '1980-01-01 00:00:00',
 `created_by` int(10) unsigned NOT NULL DEFAULT '0',
 `modified` datetime NOT NULL DEFAULT '1980-01-01 00:00:00',
 `modified_by` int(10) unsigned NOT NULL DEFAULT '0',
 `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
-`checked_out_time` datetime NULL DEFAULT '1980-01-01 00:00:00',
-`publish_up` datetime NULL DEFAULT '1980-01-01 00:00:00',
-`publish_down` datetime NULL DEFAULT '1980-01-01 00:00:00',
+`checked_out_time` datetime NOT NULL DEFAULT '1980-01-01 00:00:00',
+`publish_up` datetime NOT NULL DEFAULT '1980-01-01 00:00:00',
+`publish_down` datetime NOT NULL DEFAULT '1980-01-01 00:00:00',
 `language` char(7) NOT NULL DEFAULT '',
 PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='CG Gallery definition des sections';
