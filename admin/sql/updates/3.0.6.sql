@@ -1,1 +1,1 @@
-ALTER TABLE `#__cggallery_page` CHANGE `page_params` text NULL ;
+ALTER TABLE `#__cggallery_page` CHANGE `page_params` text text NULL ;
