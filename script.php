@@ -89,8 +89,8 @@ class com_cggalleryInstallerScript
                 File::delete($file);
             }
         }
-        $db = Factory::getDbo();
         // version 3.0.0 database update
+        $db = Factory::getContainer()->get(DatabaseInterface::class);
         $pages = $db->setQuery(
             $db->getQuery(true)
             ->select('id,page_params')
@@ -134,6 +134,16 @@ class com_cggalleryInstallerScript
             $data->id = $onepage->id;
             $data->page_params = "";
             $result = $db->updateObject('#__cggallery_page', $data, 'id', $updateNulls);
+        }
+        // MYSQL 8 : ALTER IGNORE deprecated
+		$sql = "SHOW COLUMNS FROM #__joaktree_trees";
+		$db->setQuery($sql);
+		$cols = @$db->loadObjectList("Field");
+
+		if (!array_key_exists("catid", $cols)) {
+            $sql = "ALTER TABLE #__cggallery_page DROP COLUMN page_params";
+			$db->setQuery($sql);
+			$db->execute();
         }
         // version 3.0.3 : remove images/ from ug_big_dir
         $pages = $db->setQuery(
