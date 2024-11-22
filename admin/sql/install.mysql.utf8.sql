@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS `#__cggallery_page` (
 `id` integer NOT NULL AUTO_INCREMENT,
 `title` text NOT NULL,
 `state` integer NOT NULL default 0,
-`page_params` text NOT NULL,
+`page_params` text NULL,
 `intro` text,
 `bottom` text,
 `ug_compression` int DEFAULT '0',

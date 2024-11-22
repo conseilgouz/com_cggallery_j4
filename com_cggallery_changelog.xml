@@ -2,6 +2,17 @@
     <changelog>
         <element>com_cggallery</element>
         <type>component</type>
+        <version>3.0.6</version>
+        <note>
+            <item>Update : 22/11/2024</item>
+        </note>
+        <fix>
+            <item>Sql error : page_params has no default error</item>
+        </fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
         <version>3.0.5</version>
         <note>
             <item>Update : 21/11/2024</item>

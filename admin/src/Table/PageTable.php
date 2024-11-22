@@ -1,9 +1,8 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.3.0
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
 **/
 
@@ -16,6 +15,7 @@ use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Versioning\VersionableTableInterface;
 use Joomla\Database\DatabaseDriver;
+use Joomla\Database\DatabaseInterface;
 
 class PageTable extends Table implements VersionableTableInterface
 {
@@ -43,12 +43,11 @@ class PageTable extends Table implements VersionableTableInterface
 
     public function check()
     {
-        jimport('joomla.filter.output');
         return true;
     }
     public function store($key = 0)
     {
-        $db    = Factory::getDBo();
+        $db    = Factory::getContainer()->get(DatabaseInterface::class);
         $table = $this->_tbl;
         $key   = empty($this->id) ? $key : $this->id;
 
@@ -107,10 +106,10 @@ class PageTable extends Table implements VersionableTableInterface
         }
         $table = Table::getInstance('PageTable', __NAMESPACE__ . '\\', array('dbo' => $db));
         foreach ($pks as $pk) {
-            if(!$table->load($pk)) {
+            if (!$table->load($pk)) {
                 $this->setError($table->getError());
             }
-            if($table->checked_out == 0 || $table->checked_out == $userId) {
+            if ($table->checked_out == 0 || $table->checked_out == $userId) {
                 $table->state = $state;
                 $table->checked_out = 0;
                 $table->checked_out_time = 0;
