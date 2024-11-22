@@ -136,11 +136,11 @@ class com_cggalleryInstallerScript
             $result = $db->updateObject('#__cggallery_page', $data, 'id', $updateNulls);
         }
         // MYSQL 8 : ALTER IGNORE deprecated
-		$sql = "SHOW COLUMNS FROM #__joaktree_trees";
+		$sql = "SHOW COLUMNS FROM #__cggallery_page";
 		$db->setQuery($sql);
 		$cols = @$db->loadObjectList("Field");
 
-		if (!array_key_exists("catid", $cols)) {
+		if (!array_key_exists("page_params", $cols)) {
             $sql = "ALTER TABLE #__cggallery_page DROP COLUMN page_params";
 			$db->setQuery($sql);
 			$db->execute();
