@@ -23,26 +23,6 @@
     <changelog>
         <element>com_cggallery</element>
         <type>component</type>
-        <version>3.1.0</version>
-        <note>
-            <item>Update : 31/03/2025</item>
-        </note>
-		<addition>
-			<item>Add Custom CSS</item>
-		</addition>
-        <change>
-			<item>Use range field</item>
-        </change>
-		<fix>
-			<item>Installation script : missing delete function</item>
-            <item>Joomla 6.x compatibility</item>
-            <item>Import from CG Gallery module</item>
-            <item>ug_texte to ug_text</item>
-		</fix>
-    </changelog>
-    <changelog>
-        <element>com_cggallery</element>
-        <type>component</type>
         <version>3.0.6</version>
         <note>
             <item>Update : 22/11/2024</item>
