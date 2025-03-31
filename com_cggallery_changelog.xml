@@ -12,6 +12,7 @@
 		<fix>
 			<item>Installation script : missing delete function</item>
             <item>Joomla 6.x compatibility</item>
+            <item>Import from CG Gallery module</item>
 		</fix>
     </changelog>
     <changelog>
