@@ -11,6 +11,7 @@
 		</addition>
 		<fix>
 			<item>Installation script : missing delete function</item>
+            <item>Joomla 6.x compatibility</item>
 		</fix>
     </changelog>
     <changelog>

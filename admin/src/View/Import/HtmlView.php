@@ -1,9 +1,8 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.1.1
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGGallery\Administrator\View\Import;
@@ -18,6 +17,7 @@ use Joomla\CMS\MVC\View\GenericDataException;
 use Joomla\CMS\MVC\View\HtmlView as BaseHtmlView;
 use Joomla\CMS\Toolbar\Toolbar;
 use Joomla\CMS\Toolbar\ToolbarHelper;
+use Joomla\Database\DatabaseInterface;
 
 class HtmlView extends BaseHtmlView
 {
@@ -61,7 +61,7 @@ class HtmlView extends BaseHtmlView
 		}
 	}
         protected function getModules() {
-            $db    = Factory::getDBo();
+            $db = Factory::getContainer()->get(DatabaseInterface::class);
             $result = $db->setQuery(
                 $db->getQuery(true)
                 ->select('*')

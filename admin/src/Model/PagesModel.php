@@ -1,9 +1,8 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 3.0.0
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
 **/
 
@@ -13,6 +12,7 @@ defined('_JEXEC') or die;
 use Joomla\CMS\MVC\Model\ListModel;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Table\Table;
+use Joomla\Database\DatabaseInterface;
 use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\MVC\Factory\MVCFactoryInterface;
 
@@ -36,7 +36,7 @@ class PagesModel extends ListModel
     protected function getListQuery()
     {
         // Initialise variables.
-        $db		= $this->getDbo();
+        $db = Factory::getContainer()->get(DatabaseInterface::class);
         $query	= $db->getQuery(true);
 
         // Select the required fields from the table.

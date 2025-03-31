@@ -1,20 +1,20 @@
 <?php
 /**
  * @component     CG Gallery for Joomla 4.x/5.x
- * Version			: 2.4.0
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGGallery\Administrator\Controller;
 \defined('_JEXEC') or die;
 
-use Joomla\CMS\MVC\Controller\FormController;
 use Joomla\CMS\Factory;
-use Joomla\CMS\Session\Session;
 use Joomla\CMS\Language\Text;
-use Joomla\String\StringHelper;
+use Joomla\CMS\MVC\Controller\FormController;
 use Joomla\CMS\Router\Route;
+use Joomla\CMS\Session\Session;
+use Joomla\Database\DatabaseInterface;
+use Joomla\String\StringHelper;
 
 class ImportController extends FormController
 {
@@ -31,7 +31,7 @@ class ImportController extends FormController
         $app = Factory::getApplication();
         $input = $app->input;
 		$pks = $input->post->get('cid', array(), 'array');
-        $db    = Factory::getDbo();
+        $db = Factory::getContainer()->get(DatabaseInterface::class);
 		foreach ($pks as $id)	{
             $result = $db->setQuery(
                 $db->getQuery(true)
@@ -51,40 +51,41 @@ class ImportController extends FormController
             $data->language = $result[0]['language'];            
             $page_params = [];
             $mod_params = json_decode($result[0]['params']);
-            $page_params['ug_compression'] = $mod_params->ug_compression;
-            $page_params['ug_type'] = $mod_params->ug_type;
-            $page_params['ug_tiles_type'] = $mod_params->ug_tiles_type;
-            $page_params['ug_tile_width'] = $mod_params->ug_tile_width;
-            $page_params['ug_min_columns'] = $mod_params->ug_min_columns;
-            $page_params['ug_tile_height'] = $mod_params->ug_tile_height;
+            $page_params['ug_compression']  = $mod_params->ug_compression;
+            $page_params['ug_type']         = $mod_params->ug_type;
+            $page_params['ug_tiles_type']   = $mod_params->ug_tiles_type;
+            $page_params['ug_tile_width']   = $mod_params->ug_tile_width;
+            $page_params['ug_min_columns']  = $mod_params->ug_min_columns;
+            $page_params['ug_tile_height']  = $mod_params->ug_tile_height;
             $page_params['ug_grid_num_rows'] = $mod_params->ug_grid_num_rows;
             $page_params['ug_space_between_rows'] = $mod_params->ug_space_between_rows;
             $page_params['ug_space_between_cols'] = $mod_params->ug_space_between_cols;
-            $page_params['ug_carousel_autoplay_timeout'] = $mod_params->ug_carousel_autoplay_timeout;
-            $page_params['ug_carousel_scroll_duration'] = $mod_params->ug_carousel_scroll_duration;
-            $page_params['ug_texte'] = $mod_params->ug_texte;
-            $page_params['ug_text_lgth'] = $mod_params->ug_text_lgth;
-            $page_params['ug_link'] = $mod_params->ug_link;
-            $page_params['ug_lightbox'] = $mod_params->ug_lightbox;
-            $page_params['ug_skin'] = $mod_params->ug_skin;
-            $page_params['ug_zoom'] = $mod_params->ug_zoom;
+            $page_params['ug_carousel_autoplay_timeout']    = $mod_params->ug_carousel_autoplay_timeout;
+            $page_params['ug_carousel_scroll_duration']     = $mod_params->ug_carousel_scroll_duration;
+            $page_params['ug_texte']        = $mod_params->ug_texte;
+            $page_params['ug_text_lgth']    = $mod_params->ug_text_lgth;
+            $page_params['ug_link']         = $mod_params->ug_link;
+            $page_params['ug_lightbox']     = $mod_params->ug_lightbox;
+            $page_params['ug_skin']         = $mod_params->ug_skin;
+            $page_params['ug_zoom']         = $mod_params->ug_zoom;
             $page_params['ug_dir_or_image'] = $mod_params->ug_dir_or_image;
-            $page_params['ug_autothumb'] = $mod_params->ug_autothumb;
-            $page_params['ug_big_dir'] = $mod_params->ug_big_dir;
-            $page_params['ug_full_dir'] = $mod_params->ug_full_dir;
-            $page_params['ug_file_nb'] = $mod_params->ug_file_nb;
-            $page_params['intro'] = '';
-			$page_params['bottom'] = '';
-			$page_params['articles'] = 'articles';
+            $page_params['ug_autothumb']    = $mod_params->ug_autothumb;
+            $page_params['ug_big_dir']      = $mod_params->ug_big_dir;
+            $page_params['ug_full_dir']     = $mod_params->ug_full_dir;
+            $page_params['ug_file_nb']      = $mod_params->ug_file_nb;
+            $page_params['css_gen']         = $mod_params->css_gen;
+            $page_params['intro']           = '';
+			$page_params['bottom']          = '';
+			$page_params['articles']        = 'articles';
             $data->page_params =  json_encode($page_params);
             $slideslist = json_decode(str_replace("||", "\"", $mod_params->slideslist));
             $laliste = [];
             foreach ($slideslist as $item) {
-				$obj = new \StdClass();
+				$obj            = new \StdClass();
 				$obj->file_desc = str_replace("||", "\"", $item->imgcaption);
 				$obj->file_name = str_replace("||", "\"", $item->imgname);
-				$obj->file_id = str_replace("||", "\"", $item->slidearticleid);
-				$laliste[] = $obj;
+				$obj->file_id   = str_replace("||", "\"", $item->slidearticleid);
+				$laliste[]      = $obj;
             }
             $data->slides = json_encode($laliste);
             $ret = $db->insertObject('#__cggallery_page', $data,'id');
@@ -99,7 +100,7 @@ class ImportController extends FormController
         return false;
         }
 	function check_title($title) {
-        $db    = Factory::getDbo();
+        $db = Factory::getContainer()->get(DatabaseInterface::class);
         do {
 			$result = $db->setQuery(
                 $db->getQuery(true)

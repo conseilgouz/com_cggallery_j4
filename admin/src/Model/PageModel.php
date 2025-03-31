@@ -1,18 +1,17 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 3.0.1
  * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
- * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGGallery\Administrator\Model;
 defined('_JEXEC') or die;
-use Joomla\Registry\Registry;
 use Joomla\CMS\Factory;
+use Joomla\CMS\Form\Form;
 use Joomla\CMS\MVC\Model\AdminModel;
 use Joomla\CMS\Table\Table;
-use Joomla\CMS\Form\Form;
+use Joomla\Registry\Registry;
 
 class PageModel extends AdminModel {
 

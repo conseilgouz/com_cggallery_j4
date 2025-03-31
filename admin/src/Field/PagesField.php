@@ -1,9 +1,8 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.1.1
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGGallery\Administrator\Field;
@@ -13,6 +12,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Form\Field\ListField;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\Database\DatabaseInterface;
 /* cette classe est utile pour le choix menu : affichage des pages */
 class PagesField extends ListField
 {
@@ -20,7 +20,7 @@ class PagesField extends ListField
 
     public function getOptions()
     {
-        $db = Factory::getDbo();
+        $db = Factory::getContainer()->get(DatabaseInterface::class);
         $query = $db->getQuery(true)
             ->select('s.id AS value')
             ->select('s.title AS text')

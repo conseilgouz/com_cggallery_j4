@@ -1,9 +1,8 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 2.1.1
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
 **/
 
@@ -55,7 +54,7 @@ class PageModel extends ListModel
 
     public function getArticleInfos($id)
     {
-        $db = $this->$this->getDatabase();
+        $db = $this->getDatabase();
         $query = $db->getQuery(true)
             ->select('alias,catid')
             ->from('#__content')
@@ -66,7 +65,7 @@ class PageModel extends ListModel
 
     public function getCatAlias($id)
     {
-        $db = $this->$this->getDatabase();
+        $db = $this->getDatabase();
         $query = $db->getQuery(true)
             ->select('alias')
             ->from('#__categories')
