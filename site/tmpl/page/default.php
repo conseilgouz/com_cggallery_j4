@@ -53,6 +53,11 @@ $ug_articles = $this->cgg_params->get('ug_articles', 'articles');
 /** @var Joomla\CMS\WebAsset\WebAssetManager $wa */
 $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
 
+if ($this->cgg_params->get('css_gen')) { // Custom CSS ?
+    $wa->addInlineStyle($this->cgg_params->get('css_gen'));
+}
+
+
 $wa->registerAndUseStyle('unitegallery', $comfield.'unitegallery/css/unite-gallery.css');
 $wa->registerAndUseScript('unitegallery', $comfield.'unitegallery/js/unitegallery.min.js');
 
