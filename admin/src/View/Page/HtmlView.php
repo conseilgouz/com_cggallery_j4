@@ -31,7 +31,7 @@ class HtmlView extends BaseHtmlView {
 		$this->form		= $this->get('Form');
 		$this->page		= $this->get('Item');
 		$this->formControl = $this->form ? $this->form->getFormControl() : null;	
-		$this->page_params  = new Registry($this->page->page_params);			
+		// $this->page_params  = new Registry($this->page->page_params);			
 	
         $this->addToolbar();
 

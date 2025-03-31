@@ -1,0 +1,1 @@
+ALTER TABLE `#__cggallery_page` ADD COLUMN `css_gen` text AFTER `bottom`;

@@ -2,7 +2,7 @@
 	margin-left: 10px;
 }
 #gene_tab .control-group:nth-of-type(3){ /* title */
-	float:left;width:40%;
+	float:left;width:30%;margin-right:1em;
 }
 #gene_tab .control-group:nth-of-type(4){ /* state */
 	float:left;width:30%;
@@ -10,8 +10,13 @@
 #gene_tab .control-group:nth-of-type(5){ /* language */
 	float:right;width:30%;
 }
+#gene_tab .control-group:nth-of-type(3) .control-label,
+#gene_tab .control-group:nth-of-type(4) .control-label,
+#gene_tab .control-group:nth-of-type(5) .control-label{ 
+	width:8em;
+}
 #gene_tab .control-group:nth-of-type(6){ /* Compression */
-	clear:both;width:100%;
+	clear:both;width:50%;
 }
 #gene_tab .control-group:nth-of-type(7) .controls, /* Intro */
 #gene_tab .control-group:nth-of-type(8) .controls{ /* Bottom */

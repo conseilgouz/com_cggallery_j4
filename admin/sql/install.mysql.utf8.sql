@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS `#__cggallery_page` (
 `page_params` text NULL,
 `intro` text,
 `bottom` text,
+`css_gen` text,
 `ug_compression` int DEFAULT '0',
 `ug_type` varchar(50) DEFAULT '',
 `ug_tiles_type` varchar(50) DEFAULT '',

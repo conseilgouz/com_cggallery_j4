@@ -2,6 +2,20 @@
     <changelog>
         <element>com_cggallery</element>
         <type>component</type>
+        <version>3.1.0</version>
+        <note>
+            <item>Update : 20/03/2025</item>
+        </note>
+		<addition>
+			<item>Add Custom CSS</item>
+		</addition>
+		<fix>
+			<item>Installation script : missing delete function</item>
+		</fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
         <version>3.0.6</version>
         <note>
             <item>Update : 22/11/2024</item>

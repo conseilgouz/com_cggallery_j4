@@ -1,11 +1,10 @@
 <?php
 /**
  * @component     CG Gallery for Joomla 4.x/5.x
- * Version			: 2.4.0
  *
  * @author     ConseilgGouz
- * @copyright (C) 2023 www.conseilgouz.com. All Rights Reserved.
- * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @copyright (C) 2025 www.conseilgouz.com. All Rights Reserved.
+ * @license    GNU/GPLv3 https://www.gnu.org/licenses/gpl-3.0.html
  */
 
 namespace ConseilGouz\Component\CGGallery\Administrator\Field;
@@ -14,6 +13,7 @@ use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Form\FormField;
 use Joomla\CMS\Language\Text;
+use Joomla\Database\DatabaseInterface;
 use Joomla\String\StringHelper;
 
 // Prevent direct access

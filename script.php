@@ -1,9 +1,8 @@
 <?php
 /**
 * CG Gallery Component  - Joomla 4.x/5.x Component
-* Version			: 3.0.3
 * Package			: CG Gallery
-* copyright 		: Copyright (C) 2024 ConseilGouz. All rights reserved.
+* copyright 		: Copyright (C) 2025 ConseilGouz. All rights reserved.
 * license    		: https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
 */
 // No direct access to this file
@@ -12,19 +11,19 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\Database\DatabaseInterface;
 use Joomla\Filesystem\File;
+use Joomla\Filesystem\Folder;
 use Joomla\Registry\Registry;
 
 class com_cggalleryInstallerScript
 {
     private $min_joomla_version      = '4.0';
-    private $min_php_version         = '8.0';
+    private $min_php_version         = '7.4';
     private $name                    = 'CG Gallery';
     private $exttype                 = 'component';
     private $extname                 = 'cggallery';
-    private $previous_version        = '';
     private $dir           = null;
     private $lang = null;
-    private $installerName = 'cggalleryinstaller';
+    private $installerName = 'com_cggalleryinstaller';
     public function __construct()
     {
         $this->dir = __DIR__;
@@ -45,13 +44,6 @@ class com_cggalleryInstallerScript
 
             return false;
         }
-        // To prevent installer from running twice if installing multiple extensions
-        if (! file_exists($this->dir . '/' . $this->installerName . '.xml')) {
-            return true;
-        }
-        $xml = simplexml_load_file(JPATH_ADMIN . '/components/com_'.$this->extname.'/'.$this->extname.'.xml');
-        $this->previous_version = $xml->version;
-
     }
 
     public function postflight($type, $parent)
@@ -214,7 +206,7 @@ class com_cggalleryInstallerScript
             JPATH_PLUGINS . '/system/' . $this->installerName . '/language',
             JPATH_PLUGINS . '/system/' . $this->installerName,
         ]);
-        $db = Factory::getDbo();
+        $db = Factory::getContainer()->get(DatabaseInterface::class);
         $query = $db->getQuery(true)
             ->delete('#__extensions')
             ->where($db->quoteName('element') . ' = ' . $db->quote($this->installerName))
@@ -223,6 +215,19 @@ class com_cggalleryInstallerScript
         $db->setQuery($query);
         $db->execute();
         Factory::getCache()->clean('_system');
+    }
+	
+    private function delete($files = [])
+    {
+        foreach ($files as $file) {
+            if (is_dir($file)) {
+                Folder::delete($file);
+            }
+
+            if (is_file($file)) {
+                File::delete($file);
+            }
+        }
     }
 
 }
