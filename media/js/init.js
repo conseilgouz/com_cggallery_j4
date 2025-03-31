@@ -33,9 +33,9 @@ function go_gallery (myid,options) {
 			jQuery.extend($params,{tile_show_link_icon:true,tile_link_newpage: false});
 		}
 	}
-	if ((options.ug_texte == "fixe") || (options.ug_texte == "true"))  { 
+	if ((options.ug_text == "fixe") || (options.ug_text == "true"))  { 
 		jQuery.extend($params,{tile_enable_textpanel: true,tile_textpanel_source: "desc",lightbox_show_textpanel: true});
-		if (options.ug_texte == "fixe") {
+		if (options.ug_text == "fixe") {
 			jQuery.extend($params,{tile_textpanel_always_on: true});
 		}
 	} 
@@ -76,9 +76,9 @@ function go_gallery (myid,options) {
 		} else {
 			jQuery.extend($params,{slider_control_zoom: true});
 		}
-		if (options.ug_texte != "false") {
+		if (options.ug_text != "false") {
 			jQuery.extend($params,{slider_enable_text_panel:true,slider_textpanel_enable_title: false,slider_textpanel_desc_text_align: "center",slider_enable_bullets:false});
-			if (options.ug_texte == "true") { // survol
+			if (options.ug_text == "true") { // survol
 				jQuery.extend($params,{slider_textpanel_always_on: false});
 			} 
 		} 

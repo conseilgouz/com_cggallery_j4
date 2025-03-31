@@ -29,7 +29,7 @@ $base_dir = ComponentHelper::getParams('com_cggallery')->get('base_dir','images'
 
 $this->cgg_params = CGHelper::getParams($this->page, $this->getModel());
 $ug_type	= $this->cgg_params->get('ug_type', '');
-$ug_texte	= $this->cgg_params->get('ug_text', '');
+$ug_text	= $this->cgg_params->get('ug_text', '');
 $ug_tiles_type = $this->cgg_params->get('ug_tiles_type', '');
 $ug_big_dir = $base_dir.'/'.$this->cgg_params->get('ug_big_dir', '');
 $ug_grid_num_rows = $this->cgg_params->get('ug_grid_num_rows');
@@ -278,7 +278,7 @@ if ($this->cgg_params->get('ug_dir_or_image') == "dir") { // images d'un répert
 	<?php
 $document->addScriptOptions(
     'cg_gallery_'.$com_id,
-    array('ug_type' => $ug_type,'ug_texte' => $ug_texte,
+    array('ug_type' => $ug_type,'ug_text' => $ug_text,
           'ug_tiles_type' => $ug_tiles_type,
           'ug_grid_num_rows' => $ug_grid_num_rows,
           'ug_space_between_rows' => $ug_space_between_rows,'ug_space_between_cols' => $ug_space_between_cols,

@@ -114,7 +114,7 @@ class com_cggalleryInstallerScript
                 $data->ug_space_between_cols = $compl['ug_space_between_cols'];
                 $data->ug_carousel_autoplay_timeout = $compl['ug_carousel_autoplay_timeout'];
                 $data->ug_carousel_scroll_duration = $compl['ug_carousel_scroll_duration'];
-                $data->ug_text = $compl['ug_texte'];
+                $data->ug_text = $compl['ug_text'];
                 $data->ug_text_lgth = $compl['ug_text_lgth'];
                 $data->ug_link = $compl['ug_link'];
                 $data->ug_lightbox = $compl['ug_lightbox'];
