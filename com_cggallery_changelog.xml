@@ -9,10 +9,14 @@
 		<addition>
 			<item>Add Custom CSS</item>
 		</addition>
+        <change>
+			<item>Use range field</item>
+        </change>
 		<fix>
 			<item>Installation script : missing delete function</item>
             <item>Joomla 6.x compatibility</item>
             <item>Import from CG Gallery module</item>
+            <item>ug_texte to ug_text</item>
 		</fix>
     </changelog>
     <changelog>
