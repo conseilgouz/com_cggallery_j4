@@ -1,9 +1,8 @@
 <?php
 /**
  * @component     CG Gallery
- * Version			: 3.0.4
  * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
- * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
 **/
 
@@ -58,28 +57,28 @@ if ($this->cgg_params->get('css_gen')) { // Custom CSS ?
 }
 
 
-$wa->registerAndUseStyle('unitegallery', $comfield.'unitegallery/css/unite-gallery.css');
-$wa->registerAndUseScript('unitegallery', $comfield.'unitegallery/js/unitegallery.min.js');
+$wa->registerAndUseStyle('cgunitecss', $comfield.'unitegallery/css/unite-gallery.css');
+$wa->registerAndUseScript('cgunitejs', $comfield.'unitegallery/js/unitegallery.min.js');
 
 if ($ug_skin != 'default') {
-    $wa->registerAndUseStyle('uniteskin', $comfield.'unitegallery/skins/'.$ug_skin.'/'.$ug_skin.'.css');
+    $wa->registerAndUseStyle('cgugskin', $comfield.'unitegallery/skins/'.$ug_skin.'/'.$ug_skin.'.css');
 }
 
 if ($ug_type == "tiles") {
     if ($ug_tiles_type == "tilesgrid") {
-        $wa->registerAndUseScript('tilesgrid', $comfield.'unitegallery/themes/tilesgrid/ug-theme-tilesgrid.js');
+        $wa->registerAndUseScript('cgunitetilesgrid', $comfield.'unitegallery/themes/tilesgrid/ug-theme-tilesgrid.js');
     } else {
-        $wa->registerAndUseScript('tiles', $comfield.'unitegallery/themes/tiles/ug-theme-tiles.js');
+        $wa->registerAndUseScript('cgunitetiles', $comfield.'unitegallery/themes/tiles/ug-theme-tiles.js');
     }
 }
 if ($ug_type == "grid") {
-    $wa->registerAndUseScript('grid', $comfield.'unitegallery/themes/grid/ug-theme-grid.js');
+    $wa->registerAndUseScript('cgunitegrid', $comfield.'unitegallery/themes/grid/ug-theme-grid.js');
 }
 if ($ug_type == "carousel") {
-    $wa->registerAndUseScript('carousel', $comfield.'unitegallery/themes/carousel/ug-theme-carousel.js');
+    $wa->registerAndUseScript('cgunitecarousel', $comfield.'unitegallery/themes/carousel/ug-theme-carousel.js');
 }
 if ($ug_type == "slider") {
-    $wa->registerAndUseScript('slider', $comfield.'unitegallery/themes/slider/ug-theme-slider.js');
+    $wa->registerAndUseScript('cguniteslider', $comfield.'unitegallery/themes/slider/ug-theme-slider.js');
 }
 
 if ($this->cgg_params->get('intro') && (strlen(trim($this->cgg_params->get('intro'))) > 0)) {
@@ -295,7 +294,7 @@ $document->addScriptOptions(
 )
 );
 
-$wa->registerAndUseScript('init', $comfield.'js/init.js');
+$wa->registerAndUseScript('cggallery', $comfield.'js/init.js', [], ['defer' => 'true']);
 
 if ($this->cgg_params->get('bottom') && (strlen(trim($this->cgg_params->get('bottom'))) > 0)) {
     // apply content plugins on weblinks
