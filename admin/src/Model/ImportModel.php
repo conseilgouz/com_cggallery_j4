@@ -63,11 +63,6 @@ class ImportModel extends ListModel
         $query->order($db->escape($orderCol.' '.$orderDirn));
         return $query;
     }
-    public function getTable($type = 'Pages', $prefix = 'cggalleryTable', $config = array())
-    {
-        return Factory::getApplication()->bootComponent('com_cggallery')->getMVCFactory()->createTable($type, $prefix, $config);
-        // return Table::getInstance($type, $prefix, $config);
-    }
     protected function populateState($ordering = null, $direction = null)
     {
         // Initialise variables.

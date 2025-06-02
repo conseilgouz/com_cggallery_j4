@@ -31,12 +31,13 @@ class CgrangeField extends RangeField
      *
      * @var    string
      */
-
     protected $unit = "";
     /* module's information */
     public $_ext = "com";
     public $_type = "cg";
     public $_name = "cggallery";
+
+    protected $layoutData;
 
     protected function getLayoutPaths()
     {

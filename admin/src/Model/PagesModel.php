@@ -78,8 +78,4 @@ class PagesModel extends ListModel
         // List state information.
         parent::populateState('t.id', 'DESC');
     }
-    public function getTable($type = 'Pages', $prefix = 'cggalleryTable', $config = array())
-    {
-        return Table::getInstance($type, $prefix, $config);
-    }
 }

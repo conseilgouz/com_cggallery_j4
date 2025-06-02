@@ -1,8 +1,8 @@
 <?php
 /**
  * @component     CG Gallery
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2024 ConseilGouz. All Rights Reserved.
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz
 **/
 
@@ -15,7 +15,6 @@ use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Versioning\VersionableTableInterface;
 use Joomla\Database\DatabaseDriver;
-use Joomla\Database\DatabaseInterface;
 
 class PageTable extends Table implements VersionableTableInterface
 {
@@ -47,7 +46,7 @@ class PageTable extends Table implements VersionableTableInterface
     }
     public function store($key = 0)
     {
-        $db    = Factory::getContainer()->get(DatabaseInterface::class);
+        $db    = $this->_db;
         $table = $this->_tbl;
         $key   = empty($this->id) ? $key : $this->id;
 
@@ -104,7 +103,7 @@ class PageTable extends Table implements VersionableTableInterface
                 return false;
             }
         }
-        $table = Table::getInstance('PageTable', __NAMESPACE__ . '\\', array('dbo' => $db));
+        $table = PageTable($this->_db);
         foreach ($pks as $pk) {
             if (!$table->load($pk)) {
                 $this->setError($table->getError());
