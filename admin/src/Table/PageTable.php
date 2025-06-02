@@ -103,7 +103,7 @@ class PageTable extends Table implements VersionableTableInterface
                 return false;
             }
         }
-        $table = PageTable($this->_db);
+        $table = new PageTable($this->_db);
         foreach ($pks as $pk) {
             if (!$table->load($pk)) {
                 $this->setError($table->getError());

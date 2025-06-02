@@ -2,6 +2,17 @@
     <changelog>
         <element>com_cggallery</element>
         <type>component</type>
+        <version>3.1.3</version>
+        <note>
+            <item>Update : 02/06/2025</item>
+        </note>
+		<fix>
+            <item>Admin : publish-unpublish page error</item>
+		</fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
         <version>3.1.2</version>
         <note>
             <item>Update : 01/06/2025</item>
