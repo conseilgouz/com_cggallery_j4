@@ -1,14 +1,13 @@
 <?php
 /**
- * CG Gallery Component  - Joomla 4.0.0 Component 
- * Version			: 2.1.1
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
- * @copyright (c) 2022 ConseilGouz. All Rights Reserved.
+ * CG Gallery Component  - Joomla 4.x/5.x Component 
+ * @license https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @copyright (c) 2025 ConseilGouz. All Rights Reserved.
  * @author ConseilGouz 
 **/
 namespace ConseilGouz\Component\CGGallery\Administrator\Extension;
 
-\defined('JPATH_PLATFORM') or die;
+\defined('_JEXEC') or die;
 
 use Joomla\CMS\Component\Router\RouterServiceInterface;
 use Joomla\CMS\Component\Router\RouterServiceTrait;

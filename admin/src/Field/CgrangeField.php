@@ -9,7 +9,7 @@
 
 namespace ConseilGouz\Component\CGGallery\Administrator\Field;
 
-defined('JPATH_PLATFORM') or die;
+defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Form\Field\RangeField;
 use Joomla\Database\DatabaseInterface;
