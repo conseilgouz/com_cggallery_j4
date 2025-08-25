@@ -33,7 +33,7 @@ class HtmlView extends BaseHtmlView
 		$this->pages		= $this->get('Items');
 		$this->pagination	= $this->get('Pagination');
 		$this->state		= $this->get('State');
-        $input = Factory::getApplication()->input;
+        $input = Factory::getApplication()->getInput();
 
 		// CGGalleryHelper::addSubmenu($input->getCmd('view', 'pages'));
 		// Check for errors.

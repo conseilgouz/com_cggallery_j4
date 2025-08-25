@@ -29,7 +29,7 @@ class CGHelper
     }
     public static function getFolder($dir, $model)
     {
-        $input = Factory::getApplication()->input;
+        $input = Factory::getApplication()->getInput();
         $catid = 0;
         $articleid = 0;
         $articlealias = '';

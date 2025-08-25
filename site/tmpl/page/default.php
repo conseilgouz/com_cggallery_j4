@@ -21,7 +21,7 @@ $document = Factory::getApplication()->getDocument();
 HTMLHelper::_('jquery.framework');
 $comfield	= 'media/com_cggallery/';
 $app = Factory::getApplication();
-$com_id = $app->input->getInt('Itemid');
+$com_id = $app->getInput()->getInt('Itemid');
 
 $uri = Uri::getInstance();
 $base_dir = ComponentHelper::getParams('com_cggallery')->get('base_dir','images');

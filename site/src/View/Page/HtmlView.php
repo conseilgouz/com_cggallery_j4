@@ -29,7 +29,7 @@ class HtmlView extends BaseHtmlView {
         $this->state = $this->get('State');
         $this->pagination = false; // php 8.0
         $this->params = $app->getParams('cggallery');
-        $this->page= $app->input->getInt('id'); 
+        $this->page= $app->getInput()->getInt('id'); 
         $this->_prepareDocument();
         parent::display($tpl);
     }

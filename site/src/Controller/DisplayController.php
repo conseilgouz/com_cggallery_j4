@@ -17,8 +17,8 @@ class DisplayController extends BaseController {
     public function display($cachable = false, $urlparams = false) {
         require_once JPATH_COMPONENT . '/src/Helper/CGHelper.php';
 
-        $view = Factory::getApplication()->input->getCmd('view', 'page');
-        Factory::getApplication()->input->set('view', $view);
+        $view = Factory::getApplication()->getInput()->getCmd('view', 'page');
+        Factory::getApplication()->getInput()->set('view', $view);
         parent::display($cachable, $urlparams);
 
         return $this;

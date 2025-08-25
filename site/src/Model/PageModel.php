@@ -115,8 +115,8 @@ class PageModel extends ListModel
             $menuitems = $menu->getItems('link', 'index.php?option=com_users&view=login');
             if (isset($menuitems[0])) {
                 $Itemid = $menuitems[0]->id;
-            } elseif (Factory::getApplication()->input::getInt('Itemid') > 0) {
-                $Itemid = Factory::getApplication()->input::getInt('Itemid');
+            } elseif (Factory::getApplication()->getInput()::getInt('Itemid') > 0) {
+                $Itemid = Factory::getApplication()->getInput()::getInt('Itemid');
             }
             $link = Route::_('index.php?option=com_users&view=login&Itemid=' . $Itemid);
         }

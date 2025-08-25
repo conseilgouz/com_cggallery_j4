@@ -61,7 +61,7 @@ class PageTable extends Table implements VersionableTableInterface
         $exists = $result > 0 ? true : false;
 
         // Prepare object to be saved
-        $input = Factory::getApplication()->input;
+        $input = Factory::getApplication()->getInput();
         $task = $input->get('task');
         if (($task == "save") || ($task == "apply")) {
             $data = $input->getVar('jform', array(), 'post', 'array');
