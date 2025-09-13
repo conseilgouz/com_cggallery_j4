@@ -1,6 +1,6 @@
 <?php
 /**
-* CG Gallery Component  - Joomla 4.x/5.x Component
+* CG Gallery Component  - Joomla 4.x/5.x/6.x Component
 * Package			: CG Gallery
 * copyright 		: Copyright (C) 2025 ConseilGouz. All rights reserved.
 * license    		: https://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
@@ -21,6 +21,7 @@ class com_cggalleryInstallerScript
     private $name                    = 'CG Gallery';
     private $exttype                 = 'component';
     private $extname                 = 'cggallery';
+    private $newlib_version			 = '';
     private $dir           = null;
     private $lang = null;
     private $installerName = 'com_cggalleryinstaller';
@@ -81,6 +82,19 @@ class com_cggalleryInstallerScript
                 File::delete($file);
             }
         }
+        
+        if (!$this->checkLibrary('conseilgouz')) { // need library installation
+            $ret = $this->installPackage('lib_conseilgouz');
+            if ($ret) {
+                Factory::getApplication()->enqueueMessage('ConseilGouz Library ' . $this->newlib_version . ' installed', 'notice');
+            }
+        }
+        // delete obsolete version.php file and layouts folder
+        $this->delete([
+            JPATH_ADMINISTRATOR . '/components/com_cggallery/src/Field/VersionField.php',
+            JPATH_ADMINISTRATOR . '/components/com_cggallery/src/Field/CgrangeField.php',
+            JPATH_ADMINISTRATOR . '/components/com_cggallery/layouts',
+        ]);
         // version 3.0.0 database update : remove page_params column
         $db = Factory::getContainer()->get(DatabaseInterface::class);
         // MYSQL 8 : ALTER IGNORE deprecated
@@ -166,6 +180,41 @@ class com_cggalleryInstallerScript
         $db->setQuery($query);
         $db->execute();
 
+    }
+    private function checkLibrary($library)
+    {
+        $file = $this->dir.'/lib_conseilgouz/conseilgouz.xml';
+        if (!is_file($file)) {// library not installed
+            return false;
+        }
+        $xml = simplexml_load_file($file);
+        $this->newlib_version = $xml->version;
+        $db = Factory::getContainer()->get(DatabaseInterface::class);
+        $conditions = array(
+             $db->qn('type') . ' = ' . $db->q('library'),
+             $db->qn('element') . ' = ' . $db->quote($library)
+            );
+        $query = $db->getQuery(true)
+                ->select('manifest_cache')
+                ->from($db->quoteName('#__extensions'))
+                ->where($conditions);
+        $db->setQuery($query);
+        $manif = $db->loadObject();
+        if ($manif) {
+            $manifest = json_decode($manif->manifest_cache);
+            if ($manifest->version <= $this->newlib_version) { // compare versions
+                return true; // library ok
+            }
+        }
+        return false; // need library
+    }
+    private function installPackage($package)
+    {
+        $tmpInstaller = new Joomla\CMS\Installer\Installer();
+        $db = Factory::getContainer()->get(DatabaseInterface::class);
+        $tmpInstaller->setDatabase($db);
+        $installed = $tmpInstaller->install($this->dir . '/' . $package);
+        return $installed;
     }
     // Check if Joomla version passes minimum requirement
     private function passMinimumJoomlaVersion()
