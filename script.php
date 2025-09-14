@@ -202,7 +202,7 @@ class com_cggalleryInstallerScript
         $manif = $db->loadObject();
         if ($manif) {
             $manifest = json_decode($manif->manifest_cache);
-            if ($manifest->version <= $this->newlib_version) { // compare versions
+            if ($manifest->version >= $this->newlib_version) { // compare versions
                 return true; // library ok
             }
         }

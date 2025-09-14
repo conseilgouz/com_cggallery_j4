@@ -2,6 +2,17 @@
     <changelog>
         <element>com_cggallery</element>
         <type>component</type>
+        <version>3.2.3</version>
+        <note>
+            <item>Update : 14/09/2025</item>
+        </note>
+		<fix>
+            <item>ConseiGouz Library 1.0.3</item>
+		</fix>
+    </changelog>
+    <changelog>
+        <element>com_cggallery</element>
+        <type>component</type>
         <version>3.2.2</version>
         <note>
             <item>Update : 13/09/2025</item>
